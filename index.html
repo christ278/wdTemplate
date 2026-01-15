@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Mosaic - Free Bootstrap 4 Template by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Great+Vibes&family=Cormorant+Garamond:wght@500;600&family=Allura&family=Parisienne&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+
+
+ <style>
+/* =========================
+   SECTION & BACKGROUND
+   ========================= */
+#home {
+  position: relative;
+  overflow: hidden;
+}
+
+.js-fullheight { height: 100vh; }
+.home-short { height: 90vh; }
+
+/* Gradient Background */
+.gradient-bg {
+  background: linear-gradient(rgba(10, 37, 64, 1), rgba(10, 37, 64, 1));
+}
+
+/* Container layering for decorations */
+#home .container,
+#home .row,
+#home .col-md-10 {
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+   FLORAL DECORATIONS
+   ========================= */
+.floral-left, .floral-right {
+  position: absolute;
+  top: 25%;
+  width: 15vw;          /* dynamic width */
+  max-width: 180px;     /* max size */
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.floral-left { left: -5vw; }
+.floral-right { right: -5vw; }
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+  .floral-left, .floral-right {
+    width: 25vw;
+    top: 20%;
+  }
+  .floral-left { left: -10vw; }
+  .floral-right { right: -10vw; }
+}
+
+/* =========================
+   WEDDING INTRO
+   ========================= */
+.wedding-intro {
+  font-family: 'Satisfy', cursive;
+  color: #F6F8FA;
+  font-size: clamp(16px, 2.2vw, 28px);
+  text-align: center;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
+  max-width: 90%;
+  margin: 50px auto 20px auto;
+  position: relative;
+}
+
+.wedding-intro::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 2px;
+  background-color: #BFD7ED;
+  margin: 15px auto 0 auto;
+  border-radius: 1px;
+}
+
+.wedding-initials{
+    font-family: 'Great Vibes', cursive;
+  font-size: 20px;
+}
+/* =========================
+   WEDDING NAMES
+   ========================= */
+.wedding-names {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(36px, 7vw, 85px);
+  font-weight: 400;
+  color: #F6F8FA;
+  text-shadow: 0 2px 6px rgba(10,37,64,0.45),
+               0 6px 20px rgba(10,37,64,0.25);
+  margin-bottom: 15px;
+}
+
+.ourstoryTitle {
+    font-family: 'Great Vibes', cursive;
+  font-size: clamp(26px, 4vw, 60px);
+  font-weight: 400;
+  color: #F6F8FA;
+  text-shadow: 0 2px 6px rgba(10,37,64,0.45),
+               0 6px 20px rgba(10,37,64,0.25);
+}
+
+.pageTitle{
+     font-family: 'Great Vibes', cursive;
+  font-size: clamp(26px, 4vw, 60px) !important;
+  font-weight: 400;
+}
+/* =========================
+   DATE BADGE
+   ========================= */
+.wedding-date-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  padding: 16px 22px;
+  margin: 25px 0 30px;
+  text-transform: uppercase;
+}
+
+.date-month,
+.date-year {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(12px, 2vw, 14px);
+  letter-spacing: 3px;
+  color: #F6EEE3;
+  opacity: 0.9;
+}
+
+.date-day {
+  border-left: 2px solid #F6EEE3;
+  border-right: 2px solid #F6EEE3;
+  padding: 0 15px;
+  text-align: center;
+}
+
+.date-weekday {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #F6EEE3;
+  margin-bottom: 4px;
+}
+
+.date-number {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: 700;
+  color: #8EB1DF;
+  line-height: 1;
+}
+
+/* =========================
+   COUNTDOWN
+   ========================= */
+.countdown-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 35px;
+  flex-wrap: wrap;
+  z-index: 2;
+}
+
+.countdown-box {
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 18px;
+  padding: 15px 12px;
+  min-width: clamp(80px, 20vw, 120px);
+  box-shadow: 0 15px 40px rgba(10, 37, 64, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.countdown-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(10, 37, 64, 0.45);
+}
+
+.clscdtime {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1;
+  text-shadow: 0 4px 15px rgba(10,37,64,0.5);
+}
+
+.eventcd {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #F7D7A8;
+  font-weight: 500;
+}
+
+/* =========================
+   RESPONSIVE TWEAKS
+   ========================= */
+@media (max-width: 576px) {
+  .wedding-names { font-size: clamp(28px, 8vw, 48px); }
+  .wedding-intro { font-size: 14px; margin: 30px auto 15px; }
+  .clscdtime { font-size: 1.8rem; }
+  .countdown-box { min-width: 70px; padding: 12px; }
+  .date-number { font-size: 28px; }
+  .date-month, .date-year { font-size: 11px; }
+}
+
+
+.groom-profile .groom-name {
+  font-size: 22px;
+  font-weight: bold;
+  color: #1E3A8A; /* deep blue */
+  margin-bottom: 10px;
+}
+
+</style>
+  </head>
+  <body>
+    
+	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand wedding-initials" href="index.html">
+					C & J </a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="#couple" class="nav-link">Brides & Groom</a></li>
+            <li class="nav-item"><a href="#ourstory" class="nav-link">Our Story</a></li>
+            <li class="nav-item"><a href="#entourage" class="nav-link">Entourage</a></li>
+            <li class="nav-item"><a href="#sponsors" class="nav-link">Sponsors</a></li>
+            <li class="nav-item"><a href="#rsvp" class="nav-link">RSVP</a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+    
+    <!-- Home -->
+<!-- <section id="home" class="home-short js-fullheight"
+  style="background-image: url('images/bg_1.jpg'); background-size: cover; background-position: center;"> -->
+<!-- Home Section -->
+<section id="home" class="home-short js-fullheight gradient-bg">
+  <div class="container h-100">
+    <div class="row h-100 align-items-center justify-content-center text-center position-relative">
+      <div class="col-12 col-md-10">
+
+        <!-- Left decorative element -->
+        <img src="images/floralA.png" alt="Left Floral" class="floral-left">
+
+        <!-- Right decorative element -->
+        <img src="images/floralA.png" alt="Right Floral" class="floral-right">
+
+        <!-- Wedding Intro -->
+        <p class="wedding-intro">
+          Together with our families,<br>
+          we joyfully invite you to celebrate the wedding of
+        </p>
+
+        <!-- Wedding Names -->
+        <h1 class="wedding-names mb-2">Christian & Judy Ann</h1>
+
+        <!-- Wedding Date -->
+        <div class="wedding-date-box">
+          <span class="date-month">March</span>
+          <div class="date-day">
+            <span class="date-weekday">Thursday</span>
+            <span class="date-number">26</span>
+          </div>
+          <span class="date-year">2026</span>
+        </div>
+
+        <!-- Countdown -->
+        <div class="row justify-content-center countdown-wrapper">
+          <div class="col-6 col-sm-auto d-flex justify-content-center mb-3">
+            <div class="countdown-box text-center">
+              <span id="days2" class="clscdtime">00</span>
+              <p class="eventcd">Days</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-auto d-flex justify-content-center mb-3">
+            <div class="countdown-box text-center">
+              <span id="hours2" class="clscdtime">00</span>
+              <p class="eventcd">Hrs</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-auto d-flex justify-content-center mb-3">
+            <div class="countdown-box text-center">
+              <span id="minutes2" class="clscdtime">00</span>
+              <p class="eventcd">Mins</p>
+            </div>
+          </div>
+          <div class="col-6 col-sm-auto d-flex justify-content-center mb-3">
+            <div class="countdown-box text-center">
+              <span id="seconds2" class="clscdtime">00</span>
+              <p class="eventcd">Sec</p>
+            </div>
+          </div>
+        </div>
+        <!-- End Countdown -->
+
+      </div>
+    </div>
+  </div>
+</section>
+		
+<section id="couple" class="ftco-section" >
+  <div class="container">
+    <div class="row no-gutters align-items-center mb-5">
+
+      <div class="col-md-5 imgbridegroom img-2"
+           style="background-image: url(images/groom.jpg); min-height: 40rem;    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;">
+      </div>
+
+      <div class="col-md-7 wrap-about pb-md-5 ftco-animate">
+        <div class="heading-section mb-5 pl-md-5">
+          <span class="subheading subheading-with-line">
+            <small class="pr-2 bg-white">About</small>
+          </span>
+          <h2 class="pageTitle">The Groom</h2>
+            <div class="groom-profile">
+              <h2 class="groom-name">Christian Jeed L. Bade</h2>
+              <p><strong>Born on:</strong> March 27, 1997</p>
+              <p><strong>Born in:</strong> Upper Katungal, Tacurong City, Philippines</p>
+              <p><strong>Parents:</strong> Mr. and Mrs. Lino </p>
+              <p><strong>Motto:</strong> <em>"Together is our favorite place to be."</em></p>
+            </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ROW 2: Text LEFT / Image RIGHT -->
+    <div class="row no-gutters align-items-center">
+      <div class="col-md-7 wrap-about pb-md-5 ftco-animate order-md-1 order-2">
+        <div class="heading-section mb-5 pr-md-5">
+          <span class="subheading subheading-with-line">
+            <small class="pr-2 bg-white">About</small>
+          </span>
+          <h2 class="pageTitle">The Bride</h2>
+            <div class="groom-profile">
+              <h2 class="groom-name">Judy Ann A. Galanida</h2>
+              <p><strong>Born on:</strong> June 14, 1997</p>
+              <p><strong>Born in:</strong> Buenaflor, Tacurong City, Philippines</p>
+              <p><strong>Parents:</strong> Mr. and Mrs. Jose Poe M. Galanida</p>
+              <p><strong>Motto:</strong> <em>"Together is our favorite place to be."</em></p>
+            </div>
+        </div>
+      </div>
+
+      <div class="col-md-5 imgbridegroom img-2 order-md-2 order-1"
+           style="background-image: url(images/bride.jpg); min-height: 40rem;    background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;">
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section id="ourstory" class="">
+  <div class="container">
+      <div class="row justify-content-center mb-5 pb-5">
+          <div class="col-md-8 heading-section ftco-animate text-center ourstory">
+              <h1 class="mb-4 ourstoryTitle" style="padding-top: 10px; color: white;">Our Story</h2>
+              <div class="pl-md-4 border-line">
+                  <p class="ourstory">
+                      We first met as classmates in <strong>Tacurong National High School</strong>, 
+                      but it was during our <strong>4th year</strong> that something truly special began to bloom between us. 
+                      From classmates to friends, and then to a couple, we started a journey together that would last <strong>13 amazing years</strong>.
+                  </p>
+
+                  <p  class="ourstory">
+                      Through all the laughter, challenges, and countless adventures, our love only grew stronger. 
+                      We cheered each other on, supported each other’s dreams, and found comfort knowing we could always count on one another.
+                  </p>
+
+                  <p class="ourstory">
+                      Today, we are overjoyed to start a new chapter — one filled with love, commitment, and the promise of a lifetime together. 
+                      What began as friendship in high school has blossomed into a love story that we are proud to share with all of you.
+                  </p>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section id="Church" class="ftco-section ftco-no-pb">
+  <div class="container">
+    <div class="row justify-content-center mb-5 pb-3">
+      <div class="col-md-7 heading-section ftco-animate">
+        <span class="subheading subheading-with-line"><small class="pr-2 bg-white">Ceremony</small></span>
+        <h2 class="mb-4">Nuestra Señora de la Candelaria Parish </h2>
+        <p>Lapu-Lapu Street, City of Tacurong, Sultan Kudarat, Philippines</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 ftco-animate">
+        <div class="blog-entry">
+          <a href="#" class="block-30" style="background-image: url('images/nuestrafront.jpg');">
+          </a>
+        </div>
+      </div>
+      <div class="col-md-6 ftco-animate">
+        <div class="blog-entry" data-aos-delay="100">
+          <a href="#" class="block-30" style="background-image: url('images/nuestraInside.jpg');">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dress Code Section -->
+    <div class="row justify-content-center mb-5 pb-3">
+      <div class="col-md-7 heading-section ftco-animate mb-4">
+        <span class="subheading subheading-with-line"><small class="pr-2 bg-white">Dress Code</small></span>
+        <h2 class="mb-4">What to wear?</h2>
+        <p>We would be delighted if you would join us in celebrating by wearing semi formal attire.</p>
+        <p>We also highly encourage you to dress in the shade of our color palette.</p>
+      </div>
+    </div>
+
+    <!-- Color Palette Section -->
+    <div class="row mt-3 justify-content-center">
+      <div class="col-md-10 text-center">
+        <div class="d-flex justify-content-center" style="gap: 40px; margin-top: 15px;">
+          <!-- Dusty Blue -->
+          <div style="text-align:center;">
+            <div style="width:60px; height:60px; background-color:#98C0D9; border-radius:8px; border:1px solid #ccc;"></div>
+            <small>Dusty Blue</small>
+          </div>
+          <!-- Slate Blue -->
+          <div style="text-align:center;">
+            <div style="width:60px; height:60px; background-color:#6B8DAF; border-radius:8px; border:1px solid #ccc;"></div>
+            <small>Slate Blue</small>
+          </div>
+          <!-- Navy Blue -->
+          <div style="text-align:center;">
+            <div style="width:60px; height:60px; background-color:#03254C; border-radius:8px; border:1px solid #ccc;"></div>
+            <small>Navy Blue</small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+    <section id="rsvp" class="ftco-section ftco-no-pb">
+    	<div class="container-wrap">
+    		<div class="row no-gutters">
+    			<div class="col-md-6 col-lg-3 ftco-animate">
+    				<div class="project">
+	    				<img src="images/work-1.jpg" class="img-fluid" alt="Colorlib Template">
+	    				<div class="text">
+	    					<span>Interior Design</span>
+	    					<h3><a href="project.html">Office Interior Design</a></h3>
+	    				</div>
+	    				<a href="images/work-1.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+	    					<span class="icon-expand"></span>
+	    				</a>
+    				</div>
+    			</div>
+    			<div class="col-md-6 col-lg-3 ftco-animate">
+    				<div class="project">
+	    				<img src="images/work-2.jpg" class="img-fluid" alt="Colorlib Template">
+	    				<div class="text">
+	    					<span>Interior Design</span>
+	    					<h3>Office Interior Design</h3>
+	    				</div>
+	    				<a href="images/work-2.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+	    					<span class="icon-expand"></span>
+	    				</a>
+    				</div>
+    			</div>
+    			<div class="col-md-6 col-lg-3 ftco-animate">
+    				<div class="project">
+	    				<img src="images/work-3.jpg" class="img-fluid" alt="Colorlib Template">
+	    				<div class="text">
+	    					<span>Interior Design</span>
+	    					<h3>Office Interior Design</h3>
+	    				</div>
+	    				<a href="images/work-3.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+	    					<span class="icon-expand"></span>
+	    				</a>
+    				</div>
+    			</div>
+    			<div class="col-md-6 col-lg-3 ftco-animate">
+    				<div class="project">
+	    				<img src="images/work-4.jpg" class="img-fluid" alt="Colorlib Template">
+	    				<div class="text">
+	    					<span>Interior Design</span>
+	    					<h3>Office Interior Design</h3>
+	    				</div>
+	    				<a href="images/work-4.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+	    					<span class="icon-expand"></span>
+	    				</a>
+    				</div>
+    			</div>
+    			<div class="col-md-6 col-lg-3 ftco-animate">
+    				<div class="project">
+	    				<img src="images/work-5.jpg" class="img-fluid" alt="Colorlib Template">
+	    				<div class="text">
+	    					<span>Landscape Design</span>
+	    					<h3>Office Interior Design</h3>
+	    				</div>
+	    				<a href="images/work-5.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+	    					<span class="icon-expand"></span>
+	    				</a>
+    				</div>
+    			</div>
+    			<div class="col-md-6 col-lg-3 ftco-animate">
+    				<div class="project">
+	    				<img src="images/work-6.jpg" class="img-fluid" alt="Colorlib Template">
+	    				<div class="text">
+	    					<span>Exterior Design</span>
+	    					<h3>Office Interior Design</h3>
+	    				</div>
+	    				<a href="images/work-6.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+	    					<span class="icon-expand"></span>
+	    				</a>
+    				</div>
+    			</div>
+    			<div class="col-md-6 col-lg-3 ftco-animate">
+    				<div class="project">
+	    				<img src="images/work-7.jpg" class="img-fluid" alt="Colorlib Template">
+	    				<div class="text">
+	    					<span>Exterior Design</span>
+	    					<h3>Office Interior Design</h3>
+	    				</div>
+	    				<a href="images/work-7.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+	    					<span class="icon-expand"></span>
+	    				</a>
+    				</div>
+    			</div>
+    			<div class="col-md-6 col-lg-3 ftco-animate">
+    				<div class="project">
+	    				<img src="images/work-8.jpg" class="img-fluid" alt="Colorlib Template">
+	    				<div class="text">
+	    					<span>Interior Design</span>
+	    					<h3>Office Interior Design</h3>
+	    				</div>
+	    				<a href="images/work-8.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+	    					<span class="icon-expand"></span>
+	    				</a>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+
+<section class="ftco-section testimony-section bg-light">
+  <div class="container">
+    <div class="row justify-content-center mb-5 pb-3">
+      <div class="col-md-7 heading-section ftco-animate text-center">
+        <span class="subheading subheading-with-line"><small class="pr-2 bg-light">The</small></span>
+        <h2 class="mb-4">Entourage</h2>
+      </div>
+    </div>
+
+    <!-- Parents of Groom & Bride -->
+    <div class="row justify-content-center mb-4 text-center">
+      <div class="col-md-12">
+        <h5 class="mb-2">Parents of Groom & Bride</h5>
+        <p>Mr. & Mrs. Smith, Mr. & Mrs. Johnson</p>
+      </div>
+    </div>
+
+    <!-- Principal Sponsors -->
+    <div class="row justify-content-center mb-4 text-center">
+      <div class="col-md-12">
+        <h5 class="mb-2">Principal Sponsors</h5>
+        <p>John & Mary Doe</p>
+      </div>
+    </div>
+
+    <!-- Best Man & Maid of Honor -->
+    <div class="row justify-content-center mb-4 text-center">
+      <div class="col-md-6">
+        <h5 class="mb-2">Best Man</h5>
+        <p>Michael Smith</p>
+      </div>
+      <div class="col-md-6">
+        <h5 class="mb-2">Maid of Honor</h5>
+        <p>Judy Ann</p>
+      </div>
+    </div>
+
+    <!-- Groomsmen & Bridesmaids -->
+    <div class="row justify-content-center mb-4 text-center">
+      <div class="col-md-6">
+        <h5 class="mb-2">Groomsmen</h5>
+        <p>David, Paul, Mark</p>
+      </div>
+      <div class="col-md-6">
+        <h5 class="mb-2">Bridesmaids</h5>
+        <p>Anna, Sarah, Rachel</p>
+      </div>
+    </div>
+
+    <!-- Secondary Sponsors -->
+    <div class="row justify-content-center mb-4 text-center">
+      <div class="col-md-12">
+        <h5 class="mb-2">Secondary Sponsors</h5>
+        <p>Peter & Lucy</p>
+      </div>
+    </div>
+
+    <!-- Candle, Veil & Cord Sponsors -->
+    <div class="row justify-content-center mb-4 text-center">
+      <div class="col-md-4">
+        <h5 class="mb-2">Candle Sponsors</h5>
+        <p>Tom & Angela</p>
+      </div>
+      <div class="col-md-4">
+        <h5 class="mb-2">Veil Sponsor</h5>
+        <p>Maria Lopez</p>
+      </div>
+      <div class="col-md-4">
+        <h5 class="mb-2">Cord Sponsor</h5>
+        <p>Jose Garcia</p>
+      </div>
+    </div>
+
+    <!-- Ring, Bible & Coin Bearers -->
+    <div class="row justify-content-center mb-4 text-center">
+      <div class="col-md-4">
+        <h5 class="mb-2">Ring Bearer</h5>
+        <p>Little Liam</p>
+      </div>
+      <div class="col-md-4">
+        <h5 class="mb-2">Bible Bearer</h5>
+        <p>Emily</p>
+      </div>
+      <div class="col-md-4">
+        <h5 class="mb-2">Coin Bearer</h5>
+        <p>Alex</p>
+      </div>
+    </div>
+
+    <!-- Flower Girls -->
+    <div class="row justify-content-center mb-4 text-center">
+      <div class="col-md-12">
+        <h5 class="mb-2">Flower Girls</h5>
+        <p>Chloe & Mia</p>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<section id="RSVP" class="ftco-section bg-light">
+  <div class="container">
+    <div class="row justify-content-center mb-5 pb-3">
+      <div class="col-md-7 heading-section text-center ftco-animate">
+        <span class="subheading subheading-with-line"><small class="pr-2 bg-light">Please</small></span>
+        <h2 class="mb-4">RSVP</h2>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-md-8 text-center">
+        <p class="mb-3" style="font-size: 18px; line-height: 1.6;">
+          We can't wait to celebrate with you all!<br>
+          We have reserved a seat for you.<br>
+          Please confirm by sending a reply through <strong>Facebook Messenger</strong> on or before <strong>FEBRUARY 28, 2026</strong>.
+        </p>
+        <a href="https://www.facebook.com/messages/t/YOURPAGE" class="btn btn-primary btn-lg">Send RSVP</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="ftco-footer ftco-bg-dark ftco-section">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-md">
+        <div class="ftco-footer-widget mb-4">
+          <h2 class="ftco-heading-2">RSVP</h2>
+          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+          <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
+            <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+            <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+            <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="ftco-footer-widget mb-4 ml-md-4">
+          <h2 class="ftco-heading-2">Links</h2>
+          <ul class="list-unstyled">
+            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Home</a></li>
+            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>About</a></li>
+            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Services</a></li>
+            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Projects</a></li>
+            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md">
+          <div class="ftco-footer-widget mb-4">
+          <h2 class="ftco-heading-2">Services</h2>
+          <ul class="list-unstyled">
+            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Architectural Design</a></li>
+            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Interior Design</a></li>
+            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Exterior Design</a></li>
+            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Lighting Design</a></li>
+            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>AutoCAD Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="ftco-footer-widget mb-4">
+          <h2 class="ftco-heading-2">Newsletter</h2>
+          <p>Far far away, behind the word mountains, far from the countries.</p>
+          <form action="#" class="subscribe-form">
+            <div class="form-group">
+              <input type="text" class="form-control mb-2 text-center" placeholder="Enter email address">
+              <input type="submit" value="Subscribe" class="form-control submit px-3">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center">
+
+        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/bootstrap-datepicker.js"></script>
+  <!-- <script src="js/jquery.timepicker.min.js"></script>
+  <script src="js/j"></script> -->
+  <script src="js/scrollax.min.js"></script>
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="js/google-map.js"></script> -->
+  <script src="js/main.js"></script>
+<script>
+  function startCountdown(targetDate, ids) {
+    const countDate = new Date(targetDate).getTime();
+    return setInterval(() => {
+      const now = new Date().getTime();
+      const distance = countDate - now;
+
+      if (distance < 0) {
+        clearInterval(this);
+        for (let id of Object.values(ids)) {
+          const el = document.getElementById(id);
+          if(el) el.innerText = "00";
+        }
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      for (const [key, id] of Object.entries(ids)) {
+        const el = document.getElementById(id);
+        if(el) {
+          if(key === "days") el.innerText = days.toString().padStart(2,'0');
+          if(key === "hours") el.innerText = hours.toString().padStart(2,'0');
+          if(key === "minutes") el.innerText = minutes.toString().padStart(2,'0');
+          if(key === "seconds") el.innerText = seconds.toString().padStart(2,'0');
+        }
+      }
+    }, 1000);
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    // Start countdowns only after DOM is ready
+    startCountdown("June 15, 2026 10:00:00", {
+      days:"days1", hours:"hours1", minutes:"minutes1", seconds:"seconds1"
+    });
+    startCountdown("June 15, 2026 10:00:00", {
+      days:"days2", hours:"hours2", minutes:"minutes2", seconds:"seconds2"
+    });
+  });
+</script>
+
+
+  </body>
+</html>

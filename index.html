@@ -51,11 +51,30 @@
 /* =========================
    FLORAL DECORATIONS
    ========================= */
-.floral-left, .floral-right {
+.floral-left {
   position: absolute;
-  top: 25%;
+  top: 10%;
   width: 15vw;          /* dynamic width */
-  max-width: 180px;     /* max size */
+  max-width: 300px;     /* max size */
+  opacity: 0.6;
+  z-index: 1;
+  height: 80%;
+}
+
+.floral-right {
+    position: absolute;
+  top: 10%;
+  width: 15vw;          /* dynamic width */
+  max-width: 300px;     /* max size */
+  opacity: 0.6;
+  z-index: 1;
+    height: 60%;
+}
+
+.floral-right-top {
+  position: absolute;
+  width: 10vw;          
+  /* max-width: 180px;   */
   opacity: 0.6;
   z-index: 1;
 }
@@ -128,6 +147,16 @@
      font-family: 'Great Vibes', cursive;
   font-size: clamp(26px, 4vw, 60px) !important;
   font-weight: 400;
+}
+
+.entourageTitle{
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(20px, 4vw, 40px) !important;
+  font-weight: 400;
+}
+
+.entourageNames{
+   font-weight: 350;
 }
 /* =========================
    DATE BADGE
@@ -240,6 +269,18 @@
   margin-bottom: 10px;
 }
 
+.groomsmen-list li {
+  padding: 4px 0;
+  font-family: 'Playfair Display', serif;
+}
+
+.zoom-out {
+  background-size: 90%;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.2;
+}
+
 </style>
   </head>
   <body>
@@ -276,11 +317,13 @@
       <div class="col-12 col-md-10">
 
         <!-- Left decorative element -->
-        <img src="images/floralA.png" alt="Left Floral" class="floral-left">
+        <img src="images/groomandbrideWhite.png" alt="Left Floral" class="floral-left">
 
+                <!-- Right top decorative element -->
+        <!-- <img src="images/flowerArch_B.png" alt="Right Floral" class="floral-right-top"> -->
         <!-- Right decorative element -->
+        <!-- <img src="images/whiteflower.png" alt="Right Floral" class="floral-right"> -->
         <img src="images/floralA.png" alt="Right Floral" class="floral-right">
-
         <!-- Wedding Intro -->
         <p class="wedding-intro">
           Together with our families,<br>
@@ -396,7 +439,7 @@
   <div class="container">
       <div class="row justify-content-center mb-5 pb-5">
           <div class="col-md-8 heading-section ftco-animate text-center ourstory">
-              <h1 class="mb-4 ourstoryTitle" style="padding-top: 10px; color: white;">Our Story</h2>
+              <h1 class="mb-4 pageTitle">Our Story</h2>
               <div class="pl-md-4 border-line">
                   <p class="ourstory">
                       We first met as classmates in <strong>Tacurong National High School</strong>, 
@@ -420,74 +463,171 @@
 </section>
 
 <section id="Church" class="ftco-section ftco-no-pb">
-  <div class="container">
-    <div class="row justify-content-center mb-5 pb-3">
-      <div class="col-md-7 heading-section ftco-animate">
-        <span class="subheading subheading-with-line"><small class="pr-2 bg-white">Ceremony</small></span>
-        <h2 class="mb-4">Nuestra Señora de la Candelaria Parish </h2>
-        <p>Lapu-Lapu Street, City of Tacurong, Sultan Kudarat, Philippines</p>
-      </div>
-    </div>
+  <div style="
+    position:absolute;
+    inset:0;
+    background: rgba(255,255,255,0.75); /* 👈 adjust opacity here */
+    z-index:0;
+  "></div>
 
-    <div class="row">
+  <div class="container mb-2" style="position:relative; z-index:1;">
+    <div class="row location-section">
+      <div class="col-md-6 ftco-animate">
+        <div class="container mb-2" style="background-color: #03254C; padding: 20px;">
+          <h2 class="mb-2 pageTitle" style="color: white;" >Ceremony</h2>
+          <h4 class="mb-2" style="color: white;" >Nuestra Señora de la Candelaria Parish</h4>
+          <p  class="text-white">
+            Lapu-Lapu street, Tacurong, Philippines
+          </p>
+        <div class="blog-entry" data-aos-delay="100">
+          <a href="#" class="block-30 mb-4"
+             style="background-image: url('images/nuestrafront.jpg');border-radius: 10px;">
+          </a>
+            <!-- View Map Button -->
+          <div class="text-center">
+            <a href="https://www.google.com/maps/place/Nuestra+Se%C3%B1ora+de+la+Candelaria+Parish+Church/@6.688494,124.6734805,3a,75y,261.65h,90t/data=!3m7!1e1!3m5!1sDrK4NnJTxXm02VVNfYnKMw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3DDrK4NnJTxXm02VVNfYnKMw%26yaw%3D261.6542612339423!7i16384!8i8192!4m14!1m7!3m6!1s0x32f80d431f08d3b3:0x3b02439e76924eb3!2sNuestra+Se%C3%B1ora+de+la+Candelaria+Parish+Church!8m2!3d6.6884762!4d124.6731677!16s%2Fg%2F113gyn7jj!3m5!1s0x32f80d431f08d3b3:0x3b02439e76924eb3!8m2!3d6.6884762!4d124.6731677!16s%2Fg%2F113gyn7jj?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D" 
+              target="_blank" 
+              class="btn btn-primary" style="background-color: #98C0D9; color: #fff; border: none; width: 15rem; padding: 1rem;">
+              View Map
+            </a>
+          </div>
+        </div>
+        </div>
+        <!-- Background Church -->
+        <div class="blog-entry">
+            <a href="#" class="block-30 mb-4"
+              style="
+                background-image: url('images/venue.png');
+                background-position: center;
+                background-size: contain; /* keeps the whole image visible */
+                background-repeat: no-repeat;
+                opacity: 0.2;
+                display: block;
+                width: 100%;
+                height: 700px; /* adjust height as needed */
+                border-radius: 12px; /* optional rounded corners */
+              ">
+            </a>
+        </div>
+      </div>
+
+      <!-- Reception -->
       <div class="col-md-6 ftco-animate">
         <div class="blog-entry">
-          <a href="#" class="block-30" style="background-image: url('images/nuestrafront.jpg');">
-          </a>
+            <a href="#" class="block-30 mb-4"
+              style="
+                background-image: url('images/churchB.png');
+                background-position: center;
+                background-size: contain; /* keeps the whole image visible */
+                background-repeat: no-repeat;
+                opacity: 0.2;
+                display: block;
+                width: 100%;
+                height: 700px; /* adjust height as needed */
+                border-radius: 12px; /* optional rounded corners */
+              ">
+            </a>
         </div>
-      </div>
-      <div class="col-md-6 ftco-animate">
+        <div class="container mb-2" style="background-color: #03254C; padding: 20px;">
+          <h2 class="mb-2 pageTitle" style="color: white;" >Reception</h2>
+          <h4 class="mb-2" style="color: white;" >Nuestra Señora de la Candelaria Parish</h4>
+          <p  class="text-white">
+            Lapu-Lapu street, Tacurong, Philippines
+          </p>
         <div class="blog-entry" data-aos-delay="100">
-          <a href="#" class="block-30" style="background-image: url('images/nuestraInside.jpg');">
+          <a href="#" class="block-30 mb-4"
+             style="background-image: url('images/nuestrafront.jpg');border-radius: 10px;">
           </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Dress Code Section -->
-    <div class="row justify-content-center mb-5 pb-3">
-      <div class="col-md-7 heading-section ftco-animate mb-4">
-        <span class="subheading subheading-with-line"><small class="pr-2 bg-white">Dress Code</small></span>
-        <h2 class="mb-4">What to wear?</h2>
-        <p>We would be delighted if you would join us in celebrating by wearing semi formal attire.</p>
-        <p>We also highly encourage you to dress in the shade of our color palette.</p>
-      </div>
-    </div>
-
-    <!-- Color Palette Section -->
-    <div class="row mt-3 justify-content-center">
-      <div class="col-md-10 text-center">
-        <div class="d-flex justify-content-center" style="gap: 40px; margin-top: 15px;">
-          <!-- Dusty Blue -->
-          <div style="text-align:center;">
-            <div style="width:60px; height:60px; background-color:#98C0D9; border-radius:8px; border:1px solid #ccc;"></div>
-            <small>Dusty Blue</small>
-          </div>
-          <!-- Slate Blue -->
-          <div style="text-align:center;">
-            <div style="width:60px; height:60px; background-color:#6B8DAF; border-radius:8px; border:1px solid #ccc;"></div>
-            <small>Slate Blue</small>
-          </div>
-          <!-- Navy Blue -->
-          <div style="text-align:center;">
-            <div style="width:60px; height:60px; background-color:#03254C; border-radius:8px; border:1px solid #ccc;"></div>
-            <small>Navy Blue</small>
+            <!-- View Map Button -->
+          <div class="text-center">
+            <a href="https://www.google.com/maps/place/Nuestra+Se%C3%B1ora+de+la+Candelaria+Parish+Church/@6.688494,124.6734805,3a,75y,261.65h,90t/data=!3m7!1e1!3m5!1sDrK4NnJTxXm02VVNfYnKMw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3DDrK4NnJTxXm02VVNfYnKMw%26yaw%3D261.6542612339423!7i16384!8i8192!4m14!1m7!3m6!1s0x32f80d431f08d3b3:0x3b02439e76924eb3!2sNuestra+Se%C3%B1ora+de+la+Candelaria+Parish+Church!8m2!3d6.6884762!4d124.6731677!16s%2Fg%2F113gyn7jj!3m5!1s0x32f80d431f08d3b3:0x3b02439e76924eb3!8m2!3d6.6884762!4d124.6731677!16s%2Fg%2F113gyn7jj?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D" 
+              target="_blank" 
+              class="btn btn-primary" style="background-color: #98C0D9; color: #fff; border: none; width: 15rem; padding: 1rem;">
+              View Map
+            </a>
           </div>
         </div>
+        </div>
       </div>
+
     </div>
 
+   
   </div>
 </section>
+
+<section id="dressCode" class="ftco-section ftco-no-pb">
+
+   <!-- Dress Code Section -->
+    <div class="row justify-content-center mb-5 pb-3">
+      <div class="col-md-7 heading-section ftco-animate mb-4">
+        <span class="subheading subheading-with-line">
+          <small class="pr-2 bg-white">Dress Code</small>
+        </span>
+        <h2 class="mb-4">What to wear?</h2>
+        <p>
+          We would be delighted if you would join us in celebrating by wearing
+          semi formal attire.
+        </p>
+        <p>
+          We also highly encourage you to dress in the shade of our color palette.
+        </p>
+      </div>
+    </div>
+      <!-- Color Palette Section -->
+    <div class="row mt-3 justify-content-center">
+      <div class="col-md-10 text-center">
+        <div class="d-flex justify-content-center"
+             style="gap:40px; margin-top:15px;">
+          
+          <div style="text-align:center;">
+            <div style="
+              width:60px; height:60px;
+              background-color:#98C0D9;
+              border-radius:8px;
+              border:1px solid #ccc;">
+            </div>
+            <small>Dusty Blue</small>
+          </div>
+
+          <div style="text-align:center;">
+            <div style="
+              width:60px; height:60px;
+              background-color:#6B8DAF;
+              border-radius:8px;
+              border:1px solid #ccc;">
+            </div>
+            <small>Slate Blue</small>
+          </div>
+
+          <div style="text-align:center;">
+            <div style="
+              width:60px; height:60px;
+              background-color:#03254C;
+              border-radius:8px;
+              border:1px solid #ccc;">
+            </div>
+            <small>Navy Blue</small>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+</section>
+
+
+
+
     <section id="rsvp" class="ftco-section ftco-no-pb">
     	<div class="container-wrap">
     		<div class="row no-gutters">
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="project">
-	    				<img src="images/work-1.jpg" class="img-fluid" alt="Colorlib Template">
+	    				<img src="images/nuestraInside.jpg" class="img-fluid" alt="Colorlib Template" style="height: 100% !important; width: 100%;">
 	    				<div class="text">
-	    					<span>Interior Design</span>
-	    					<h3><a href="project.html">Office Interior Design</a></h3>
+	    					<span>Ceremony</span>
+	    					<h3><a href="#">Nuestra Señora de la Candelaria Parish</a></h3>
 	    				</div>
 	    				<a href="images/work-1.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
 	    					<span class="icon-expand"></span>
@@ -587,95 +727,99 @@
     <div class="row justify-content-center mb-5 pb-3">
       <div class="col-md-7 heading-section ftco-animate text-center">
         <span class="subheading subheading-with-line"><small class="pr-2 bg-light">The</small></span>
-        <h2 class="mb-4">Entourage</h2>
+        <h2 class="mb-4 pageTitle">Entourage</h2>
       </div>
     </div>
 
     <!-- Parents of Groom & Bride -->
     <div class="row justify-content-center mb-4 text-center">
-      <div class="col-md-12">
-        <h5 class="mb-2">Parents of Groom & Bride</h5>
-        <p>Mr. & Mrs. Smith, Mr. & Mrs. Johnson</p>
+      <div class="col-md-6">
+        <h5 class="mb-2 entourageTitle">Parents of Groom</h5>
+        <p class="entourageNames"class="entourageNames">Mrs. Rosemarie L. Bade</p>
+      </div>
+      <div class="col-md-6">
+        <h5 class="mb-2 entourageTitle">Parents of Bride</h5>
+        <p class="entourageNames">Mr. Jose Poe M. Galanida & Mrs. Arlyn A. Galanida</p>
       </div>
     </div>
 
     <!-- Principal Sponsors -->
     <div class="row justify-content-center mb-4 text-center">
       <div class="col-md-12">
-        <h5 class="mb-2">Principal Sponsors</h5>
-        <p>John & Mary Doe</p>
+        <h5 class="mb-2 entourageTitle">Principal Sponsors</h5>
+        <p class="entourageNames">Mrs. Chyl F. Besañes & Mr. Ian C. Besañes</p>
       </div>
     </div>
 
     <!-- Best Man & Maid of Honor -->
     <div class="row justify-content-center mb-4 text-center">
       <div class="col-md-6">
-        <h5 class="mb-2">Best Man</h5>
-        <p>Michael Smith</p>
+        <h5 class="mb-2 entourageTitle">Best Man</h5>
+        <p class="entourageNames">Rolenber L. Bade</p>
       </div>
       <div class="col-md-6">
-        <h5 class="mb-2">Maid of Honor</h5>
-        <p>Judy Ann</p>
+        <h5 class="mb-2 entourageTitle">Maid of Honor</h5>
+        <p class="entourageNames">Pauline Jane A. Galanida</p>
       </div>
     </div>
 
     <!-- Groomsmen & Bridesmaids -->
     <div class="row justify-content-center mb-4 text-center">
       <div class="col-md-6">
-        <h5 class="mb-2">Groomsmen</h5>
-        <p>David, Paul, Mark</p>
+        <h5 class="mb-2 entourageTitle">Groomsmen</h5>
+          <ul class="list-unstyled">
+            <li class="entourageNames">David</li>
+            <li class="entourageNames">Paul</li>
+            <li class="entourageNames">Mark</li>
+          </ul>
       </div>
       <div class="col-md-6">
-        <h5 class="mb-2">Bridesmaids</h5>
-        <p>Anna, Sarah, Rachel</p>
-      </div>
-    </div>
-
-    <!-- Secondary Sponsors -->
-    <div class="row justify-content-center mb-4 text-center">
-      <div class="col-md-12">
-        <h5 class="mb-2">Secondary Sponsors</h5>
-        <p>Peter & Lucy</p>
+        <h5 class="mb-2 entourageTitle">Bridesmaids</h5>
+          <ul class="list-unstyled">
+            <li class="entourageNames">David</li>
+            <li class="entourageNames">Paul</li>
+            <li class="entourageNames">Mark</li>
+          </ul>
       </div>
     </div>
 
     <!-- Candle, Veil & Cord Sponsors -->
     <div class="row justify-content-center mb-4 text-center">
       <div class="col-md-4">
-        <h5 class="mb-2">Candle Sponsors</h5>
-        <p>Tom & Angela</p>
+        <h5 class="mb-2 entourageTitle">Candle Sponsors</h5>
+        <p class="entourageNames">Ms. Ellen Rose L. Bade & Mr. Mhel Toquirre</p>
       </div>
       <div class="col-md-4">
-        <h5 class="mb-2">Veil Sponsor</h5>
-        <p>Maria Lopez</p>
+        <h5 class="mb-2 entourageTitle">Veil Sponsor</h5>
+        <p class="entourageNames">Mr. Jerry Cristobas & Mrs. Jocelyn B. Cristobas</p>
       </div>
       <div class="col-md-4">
-        <h5 class="mb-2">Cord Sponsor</h5>
-        <p>Jose Garcia</p>
+        <h5 class="mb-2 entourageTitle">Cord Sponsor</h5>
+        <p class="entourageNames">Mrs. Michelle T. Salloman & Mr. Salloman</p>
       </div>
     </div>
 
     <!-- Ring, Bible & Coin Bearers -->
     <div class="row justify-content-center mb-4 text-center">
       <div class="col-md-4">
-        <h5 class="mb-2">Ring Bearer</h5>
-        <p>Little Liam</p>
+        <h5 class="mb-2 entourageTitle">Ring Bearer</h5>
+        <p class="entourageNames">Angelo Arcena</p>
       </div>
       <div class="col-md-4">
-        <h5 class="mb-2">Bible Bearer</h5>
-        <p>Emily</p>
+        <h5 class="mb-2 entourageTitle">Bible Bearer</h5>
+        <p class="entourageNames">Jandy Burcag</p>
       </div>
       <div class="col-md-4">
-        <h5 class="mb-2">Coin Bearer</h5>
-        <p>Alex</p>
+        <h5 class="mb-2 entourageTitle">Coin Bearer</h5>
+        <p class="entourageNames">Kin Jiro Deniega</p>
       </div>
     </div>
 
     <!-- Flower Girls -->
     <div class="row justify-content-center mb-4 text-center">
       <div class="col-md-12">
-        <h5 class="mb-2">Flower Girls</h5>
-        <p>Chloe & Mia</p>
+        <h5 class="mb-2 entourageTitle">Flower Girls</h5>
+        <p class="entourageNames">Samantha Faye Genandoy</p>
       </div>
     </div>
     

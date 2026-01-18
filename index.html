@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Mosaic - Free Bootstrap 4 Template by Colorlib</title>
+    <title>Christian & Judy Ann Wedding</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Great+Vibes&family=Cormorant+Garamond:wght@500;600&family=Allura&family=Parisienne&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
@@ -23,7 +24,21 @@
     <link rel="stylesheet" href="css/style.css">
 
 
- <style>
+<style>
+/* =================================
+   GLOBAL SAFETY NET
+   ================================= */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* =========================
    SECTION & BACKGROUND
    ========================= */
@@ -32,12 +47,38 @@
   overflow: hidden;
 }
 
-.js-fullheight { height: 100vh; }
-.home-short { height: 90vh; }
+/* Desktop defaults (NO fixed height) */
+.js-fullheight {
+  min-height: 100vh;
+}
+
+.home-short {
+  min-height: 90vh;
+}
+
+/* Modern mobile browsers (safe viewport units) */
+@supports (height: 100svh) {
+  .js-fullheight {
+    min-height: 100svh;
+  }
+
+  .home-short {
+    min-height: 90svh;
+  }
+}
 
 /* Gradient Background */
 .gradient-bg {
-  background: linear-gradient(rgba(10, 37, 64, 1), rgba(10, 37, 64, 1));
+  /* Background image with a dark overlay */
+  background: 
+    linear-gradient(rgba(10, 37, 64, 0.7), rgba(10, 37, 64, 0.7)), 
+    url('images/weddingFlower.png') no-repeat center center;
+  background-size: cover;
+}
+
+.countDownBG{
+    background: linear-gradient(rgba(10, 37, 64, 1), rgba(10, 37, 64, 1));
+    padding: 2rem;
 }
 
 /* Container layering for decorations */
@@ -51,43 +92,49 @@
 /* =========================
    FLORAL DECORATIONS
    ========================= */
+.floral-left,
+.floral-right,
+.floral-right-top {
+  pointer-events: none;
+}
+
 .floral-left {
   position: absolute;
   top: 10%;
-  width: 15vw;          /* dynamic width */
-  max-width: 300px;     /* max size */
+  width: 15vw;
+  max-width: 300px;
   opacity: 0.6;
   z-index: 1;
   height: 80%;
+  left: -5vw;
 }
 
 .floral-right {
-    position: absolute;
+  position: absolute;
   top: 10%;
-  width: 15vw;          /* dynamic width */
-  max-width: 300px;     /* max size */
+  width: 15vw;
+  max-width: 300px;
   opacity: 0.6;
   z-index: 1;
-    height: 60%;
+  height: 60%;
+  right: -5vw;
 }
 
 .floral-right-top {
   position: absolute;
-  width: 10vw;          
-  /* max-width: 180px;   */
+  width: 10vw;
   opacity: 0.6;
   z-index: 1;
 }
 
-.floral-left { left: -5vw; }
-.floral-right { right: -5vw; }
-
-/* Adjust for smaller screens */
+/* Tablet */
 @media (max-width: 768px) {
-  .floral-left, .floral-right {
+  .floral-left,
+  .floral-right {
     width: 25vw;
     top: 20%;
   }
+
   .floral-left { left: -10vw; }
   .floral-right { right: -10vw; }
 }
@@ -103,7 +150,7 @@
   line-height: 1.4;
   letter-spacing: 0.5px;
   max-width: 90%;
-  margin: 50px auto 20px auto;
+  margin: 15% auto 20px auto;
   position: relative;
 }
 
@@ -113,21 +160,28 @@
   width: 80px;
   height: 2px;
   background-color: #BFD7ED;
-  margin: 15px auto 0 auto;
+  margin: 15px auto 0;
   border-radius: 1px;
 }
 
-.wedding-initials{
-    font-family: 'Great Vibes', cursive;
+.wedding-initials {
+  font-family: 'Great Vibes', cursive;
   font-size: 20px;
 }
+
 /* =========================
-   WEDDING NAMES
+   WEDDING NAMES & TITLES
    ========================= */
-.wedding-names {
+.wedding-names,
+.ourstoryTitle,
+.pageTitle,
+.entourageTitle {
   font-family: 'Great Vibes', cursive;
-  font-size: clamp(36px, 7vw, 85px);
   font-weight: 400;
+}
+
+.wedding-names {
+  font-size: clamp(36px, 7vw, 105px);
   color: #F6F8FA;
   text-shadow: 0 2px 6px rgba(10,37,64,0.45),
                0 6px 20px rgba(10,37,64,0.25);
@@ -135,29 +189,22 @@
 }
 
 .ourstoryTitle {
-    font-family: 'Great Vibes', cursive;
   font-size: clamp(26px, 4vw, 60px);
-  font-weight: 400;
   color: #F6F8FA;
-  text-shadow: 0 2px 6px rgba(10,37,64,0.45),
-               0 6px 20px rgba(10,37,64,0.25);
 }
 
-.pageTitle{
-     font-family: 'Great Vibes', cursive;
-  font-size: clamp(26px, 4vw, 60px) !important;
-  font-weight: 400;
+.pageTitle {
+  font-size: clamp(40px, 6vw, 80px) !important;
 }
 
-.entourageTitle{
-  font-family: 'Great Vibes', cursive;
-  font-size: clamp(20px, 4vw, 40px) !important;
-  font-weight: 400;
+.entourageTitle {
+  font-size: clamp(30px, 4vw, 40px) !important;
 }
 
-.entourageNames{
-   font-weight: 350;
+.entourageNames {
+  font-weight: 350;
 }
+
 /* =========================
    DATE BADGE
    ========================= */
@@ -166,14 +213,14 @@
   align-items: center;
   gap: 18px;
   padding: 16px 22px;
-  margin: 25px 0 30px;
+  /* margin: 25px 0 30px; */
   text-transform: uppercase;
 }
 
 .date-month,
 .date-year {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(12px, 2vw, 14px);
+  font-size: clamp(12px, 2vw, 18px);
   letter-spacing: 3px;
   color: #F6EEE3;
   opacity: 0.9;
@@ -189,7 +236,7 @@
 .date-weekday {
   display: block;
   font-family: 'Montserrat', sans-serif;
-  font-size: 11px;
+  font-size: 20px;
   letter-spacing: 3px;
   color: #F6EEE3;
   margin-bottom: 4px;
@@ -197,76 +244,98 @@
 
 .date-number {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(28px, 5vw, 42px);
+  font-size: clamp(28px, 5vw, 65px);
   font-weight: 700;
   color: #8EB1DF;
   line-height: 1;
 }
 
 /* =========================
-   COUNTDOWN
+   COUNTDOWN (ONE ROW ALWAYS)
    ========================= */
 .countdown-wrapper {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
   justify-content: center;
-  gap: 28px;
-  margin-top: 35px;
-  flex-wrap: wrap;
+  max-width: 520px;
+  margin-inline: auto;
   z-index: 2;
 }
 
 .countdown-box {
+  min-width: 0;
   background: rgba(255, 255, 255, 0.18);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   border-radius: 18px;
-  padding: 15px 12px;
-  min-width: clamp(80px, 20vw, 120px);
+  padding: 16px 12px;
   box-shadow: 0 15px 40px rgba(10, 37, 64, 0.35);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.countdown-box:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 50px rgba(10, 37, 64, 0.45);
 }
 
 .clscdtime {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-size: clamp(1.6rem, 4vw, 3.2rem);
   font-weight: 700;
-  color: #FFFFFF;
+  color: #fff;
   line-height: 1;
-  text-shadow: 0 4px 15px rgba(10,37,64,0.5);
 }
 
 .eventcd {
-  margin-top: 10px;
-  font-size: 0.85rem;
-  letter-spacing: 3px;
+  margin-top: 6px;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
   text-transform: uppercase;
   color: #F7D7A8;
-  font-weight: 500;
 }
 
 /* =========================
-   RESPONSIVE TWEAKS
+   MOBILE TWEAKS
    ========================= */
 @media (max-width: 576px) {
-  .wedding-names { font-size: clamp(28px, 8vw, 48px); }
-  .wedding-intro { font-size: 14px; margin: 30px auto 15px; }
-  .clscdtime { font-size: 1.8rem; }
-  .countdown-box { min-width: 70px; padding: 12px; }
-  .date-number { font-size: 28px; }
-  .date-month, .date-year { font-size: 11px; }
+  .wedding-names {
+    font-size: clamp(28px, 10vw, 48px);
+  }
+
+  .wedding-intro {
+    font-size: 18px;
+    margin: 18% auto 15px;
+  }
+
+  .countdown-wrapper {
+    gap: 8px;
+  }
+
+  .countdown-box {
+    padding: 5px 6px;
+    border-radius: 14px;
+  }
+
+  .clscdtime {
+    font-size: 1.8rem;
+  }
+
+  .eventcd {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+  }
+
+  /* ✅ FIXED HEIGHT ISSUE */
+  .js-fullheight {
+    min-height: 88vh;
+  }
+
+  .home-short {
+    min-height: 60vh;
+  }
 }
 
-
+/* =========================
+   MISC
+   ========================= */
 .groom-profile .groom-name {
   font-size: 22px;
   font-weight: bold;
-  color: #1E3A8A; /* deep blue */
-  margin-bottom: 10px;
+  color: #1E3A8A;
 }
 
 .groomsmen-list li {
@@ -281,14 +350,80 @@
   opacity: 0.2;
 }
 
+/* =========================
+   FLOATING RSVP BUTTON - RIGHT MIDDLE
+   ========================= */
+/* =========================
+   FLOATING RSVP BUTTON - RIGHT MIDDLE
+   ========================= */
+.rsvp-float-btn {
+  position: fixed;
+  top: 40%;
+  right: 20px;
+  transform: translateY(-50%);
+  z-index: 9999;
+
+  background: #ee583a; /* bright pink */
+  color: #fff;
+  border: none;
+  padding: 12px 22px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 50px;
+
+  box-shadow: 0 0 20px rgba(245, 108, 80, 0.6);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  animation: pulse 2s infinite;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.rsvp-float-btn:hover {
+  transform: translateY(-40%) scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 95, 92, 0.9);
+}
+
+/* PULSE ANIMATION */
+@keyframes pulse {
+  0% { box-shadow: 0 0 10px rgba(255, 92, 141, 0.5); }
+  50% { box-shadow: 0 0 25px rgba(255, 92, 141, 0.8); }
+  100% { box-shadow: 0 0 10px rgba(255, 92, 141, 0.5); }
+}
+
+/* MOBILE TWEAKS */
+@media (max-width: 576px) {
+  .rsvp-float-btn {
+    top: 50%;
+    right: 12px;
+    padding: 10px 18px;
+    font-size: 14px;
+    transform: translateY(-50%);
+  }
+}
+
+.entourage-bg {
+  background-image: url('images/entourgementback.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+}
+
 </style>
+
+
   </head>
   <body>
     
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand wedding-initials" href="index.html">
-					C & J </a>
+        <a class="navbar-brand wedding-initials" href="index.html">
+        <img src="images/cjLogo.png" alt="C & J Wedding Logo" style="height: 50px;">
+      </a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
@@ -296,44 +431,34 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
             <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="#couple" class="nav-link">Brides & Groom</a></li>
             <li class="nav-item"><a href="#ourstory" class="nav-link">Our Story</a></li>
+            <li class="nav-item"><a href="#Church" class="nav-link">Ceremony & Reception</a></li>
             <li class="nav-item"><a href="#entourage" class="nav-link">Entourage</a></li>
-            <li class="nav-item"><a href="#sponsors" class="nav-link">Sponsors</a></li>
-            <li class="nav-item"><a href="#rsvp" class="nav-link">RSVP</a></li>
+            <li class="nav-item"><a href="#Gallery" class="nav-link">Gallery</a></li>
 	        </ul>
 	      </div>
 	    </div>
 	  </nav>
     <!-- END nav -->
-    
-    <!-- Home -->
-<!-- <section id="home" class="home-short js-fullheight"
-  style="background-image: url('images/bg_1.jpg'); background-size: cover; background-position: center;"> -->
-<!-- Home Section -->
-<section id="home" class="home-short js-fullheight gradient-bg">
-  <div class="container h-100">
-    <div class="row h-100 align-items-center justify-content-center text-center position-relative">
+<!-- ================= HERO ================= -->
+<section id="home" class="home-short gradient-bg">
+  <div class="container">
+    <div class="row align-items-center justify-content-center text-center position-relative">
       <div class="col-12 col-md-10">
-
-        <!-- Left decorative element -->
-        <img src="images/groomandbrideWhite.png" alt="Left Floral" class="floral-left">
-
-                <!-- Right top decorative element -->
-        <!-- <img src="images/flowerArch_B.png" alt="Right Floral" class="floral-right-top"> -->
-        <!-- Right decorative element -->
-        <!-- <img src="images/whiteflower.png" alt="Right Floral" class="floral-right"> -->
-        <img src="images/floralA.png" alt="Right Floral" class="floral-right">
-        <!-- Wedding Intro -->
         <p class="wedding-intro">
           Together with our families,<br>
           we joyfully invite you to celebrate the wedding of
         </p>
 
-        <!-- Wedding Names -->
-        <h1 class="wedding-names mb-2">Christian & Judy Ann</h1>
+      <div class="pb-4" style="text-align: center; padding-top: 4rem;">
+        <h1 class="wedding-names mb-2" style="display: inline-flex; justify-content: center; align-items: center; gap: 0.5rem; white-space: nowrap;">
+          &nbsp;&nbsp;&nbsp;&nbsp;Christian
+          <img src="images/groomandbrideWhite.png" alt="and" style="height: 1.2em;">
+          Judy Ann
+        </h1>
+    </div>
 
-        <!-- Wedding Date -->
+
         <div class="wedding-date-box">
           <span class="date-month">March</span>
           <div class="date-day">
@@ -343,100 +468,60 @@
           <span class="date-year">2026</span>
         </div>
 
-        <!-- Countdown -->
-        <div class="row justify-content-center countdown-wrapper">
-          <div class="col-6 col-sm-auto d-flex justify-content-center mb-3">
-            <div class="countdown-box text-center">
-              <span id="days2" class="clscdtime">00</span>
-              <p class="eventcd">Days</p>
-            </div>
-          </div>
-          <div class="col-6 col-sm-auto d-flex justify-content-center mb-3">
-            <div class="countdown-box text-center">
-              <span id="hours2" class="clscdtime">00</span>
-              <p class="eventcd">Hrs</p>
-            </div>
-          </div>
-          <div class="col-6 col-sm-auto d-flex justify-content-center mb-3">
-            <div class="countdown-box text-center">
-              <span id="minutes2" class="clscdtime">00</span>
-              <p class="eventcd">Mins</p>
-            </div>
-          </div>
-          <div class="col-6 col-sm-auto d-flex justify-content-center mb-3">
-            <div class="countdown-box text-center">
-              <span id="seconds2" class="clscdtime">00</span>
-              <p class="eventcd">Sec</p>
-            </div>
-          </div>
-        </div>
-        <!-- End Countdown -->
-
       </div>
     </div>
   </div>
 </section>
-		
-<section id="couple" class="ftco-section" >
+
+<section class="countDownBG">
+          <!-- Countdown -->
+        <div class="countdown-wrapper">
+          <div class="countdown-box text-center">
+            <span id="days2" class="clscdtime">00</span>
+            <p class="eventcd">Days</p>
+          </div>
+          <div class="countdown-box text-center">
+            <span id="hours2" class="clscdtime">00</span>
+            <p class="eventcd">Hrs</p>
+          </div>
+          <div class="countdown-box text-center">
+            <span id="minutes2" class="clscdtime">00</span>
+            <p class="eventcd">Mins</p>
+          </div>
+          <div class="countdown-box text-center">
+            <span id="seconds2" class="clscdtime">00</span>
+            <p class="eventcd">Sec</p>
+          </div>
+        </div>
+</section>
+
+<section id="" class="ftco-section">
   <div class="container">
+
     <div class="row no-gutters align-items-center mb-5">
-
-      <div class="col-md-5 imgbridegroom img-2"
-           style="background-image: url(images/groom.jpg); min-height: 40rem;    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;">
-      </div>
-
-      <div class="col-md-7 wrap-about pb-md-5 ftco-animate">
-        <div class="heading-section mb-5 pl-md-5">
-          <span class="subheading subheading-with-line">
-            <small class="pr-2 bg-white">About</small>
-          </span>
-          <h2 class="pageTitle">The Groom</h2>
-            <div class="groom-profile">
-              <h2 class="groom-name">Christian Jeed L. Bade</h2>
-              <p><strong>Born on:</strong> March 27, 1997</p>
-              <p><strong>Born in:</strong> Upper Katungal, Tacurong City, Philippines</p>
-              <p><strong>Parents:</strong> Mr. and Mrs. Lino </p>
-              <p><strong>Motto:</strong> <em>"Together is our favorite place to be."</em></p>
-            </div>
+      <div class="col-12 imgbridegroom">
+        <div class="row">
+          <!-- First column -->
+          <div class="col-12 col-md-6 d-flex justify-content-center mb-4 mb-md-0">
+            <img src="images/brideGroomAAA.png" alt="Bride and Groom" class="img-fluid" style="max-height: 40rem;">
+          </div>
+          <!-- Second column -->
+          <div class="col-12 col-md-6 d-flex justify-content-center">
+            <img src="images/calendar.png" alt="Calendar" class="img-fluid" style="max-height: 40rem;">
+          </div>
         </div>
       </div>
-
     </div>
-
-    <!-- ROW 2: Text LEFT / Image RIGHT -->
-    <div class="row no-gutters align-items-center">
-      <div class="col-md-7 wrap-about pb-md-5 ftco-animate order-md-1 order-2">
-        <div class="heading-section mb-5 pr-md-5">
-          <span class="subheading subheading-with-line">
-            <small class="pr-2 bg-white">About</small>
-          </span>
-          <h2 class="pageTitle">The Bride</h2>
-            <div class="groom-profile">
-              <h2 class="groom-name">Judy Ann A. Galanida</h2>
-              <p><strong>Born on:</strong> June 14, 1997</p>
-              <p><strong>Born in:</strong> Buenaflor, Tacurong City, Philippines</p>
-              <p><strong>Parents:</strong> Mr. and Mrs. Jose Poe M. Galanida</p>
-              <p><strong>Motto:</strong> <em>"Together is our favorite place to be."</em></p>
-            </div>
-        </div>
-      </div>
-
-      <div class="col-md-5 imgbridegroom img-2 order-md-2 order-1"
-           style="background-image: url(images/bride.jpg); min-height: 40rem;    background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;">
-      </div>
-
-    </div>
-
   </div>
 </section>
 
-
-<section id="ourstory" class="">
+<!-- ================= COUPLE ================= -->
+<section id="ourstory" class="ftco-section">
   <div class="container">
+<hr>
+    <div class="row no-gutters align-items-center">
+      <div class="col-md-7 wrap-about order-md-1 order-2">
+     <div class="container">
       <div class="row justify-content-center mb-5 pb-5">
           <div class="col-md-8 heading-section ftco-animate text-center ourstory">
               <h1 class="mb-4 pageTitle">Our Story</h2>
@@ -460,105 +545,95 @@
           </div>
       </div>
   </div>
-</section>
-
-<section id="Church" class="ftco-section ftco-no-pb">
-  <div style="
-    position:absolute;
-    inset:0;
-    background: rgba(255,255,255,0.75); /* 👈 adjust opacity here */
-    z-index:0;
-  "></div>
-
-  <div class="container mb-2" style="position:relative; z-index:1;">
-    <div class="row location-section">
-      <div class="col-md-6 ftco-animate">
-        <div class="container mb-2" style="background-color: #03254C; padding: 20px;">
-          <h2 class="mb-2 pageTitle" style="color: white;" >Ceremony</h2>
-          <h4 class="mb-2" style="color: white;" >Nuestra Señora de la Candelaria Parish</h4>
-          <p  class="text-white">
-            Lapu-Lapu street, Tacurong, Philippines
-          </p>
-        <div class="blog-entry" data-aos-delay="100">
-          <a href="#" class="block-30 mb-4"
-             style="background-image: url('images/nuestrafront.jpg');border-radius: 10px;">
-          </a>
-            <!-- View Map Button -->
-          <div class="text-center">
-            <a href="https://www.google.com/maps/place/Nuestra+Se%C3%B1ora+de+la+Candelaria+Parish+Church/@6.688494,124.6734805,3a,75y,261.65h,90t/data=!3m7!1e1!3m5!1sDrK4NnJTxXm02VVNfYnKMw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3DDrK4NnJTxXm02VVNfYnKMw%26yaw%3D261.6542612339423!7i16384!8i8192!4m14!1m7!3m6!1s0x32f80d431f08d3b3:0x3b02439e76924eb3!2sNuestra+Se%C3%B1ora+de+la+Candelaria+Parish+Church!8m2!3d6.6884762!4d124.6731677!16s%2Fg%2F113gyn7jj!3m5!1s0x32f80d431f08d3b3:0x3b02439e76924eb3!8m2!3d6.6884762!4d124.6731677!16s%2Fg%2F113gyn7jj?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D" 
-              target="_blank" 
-              class="btn btn-primary" style="background-color: #98C0D9; color: #fff; border: none; width: 15rem; padding: 1rem;">
-              View Map
-            </a>
-          </div>
-        </div>
-        </div>
-        <!-- Background Church -->
-        <div class="blog-entry">
-            <a href="#" class="block-30 mb-4"
-              style="
-                background-image: url('images/venue.png');
-                background-position: center;
-                background-size: contain; /* keeps the whole image visible */
-                background-repeat: no-repeat;
-                opacity: 0.2;
-                display: block;
-                width: 100%;
-                height: 700px; /* adjust height as needed */
-                border-radius: 12px; /* optional rounded corners */
-              ">
-            </a>
-        </div>
       </div>
 
-      <!-- Reception -->
-      <div class="col-md-6 ftco-animate">
-        <div class="blog-entry">
-            <a href="#" class="block-30 mb-4"
-              style="
-                background-image: url('images/churchB.png');
-                background-position: center;
-                background-size: contain; /* keeps the whole image visible */
-                background-repeat: no-repeat;
-                opacity: 0.2;
-                display: block;
-                width: 100%;
-                height: 700px; /* adjust height as needed */
-                border-radius: 12px; /* optional rounded corners */
-              ">
-            </a>
-        </div>
-        <div class="container mb-2" style="background-color: #03254C; padding: 20px;">
-          <h2 class="mb-2 pageTitle" style="color: white;" >Reception</h2>
-          <h4 class="mb-2" style="color: white;" >Nuestra Señora de la Candelaria Parish</h4>
-          <p  class="text-white">
-            Lapu-Lapu street, Tacurong, Philippines
-          </p>
-        <div class="blog-entry" data-aos-delay="100">
-          <a href="#" class="block-30 mb-4"
-             style="background-image: url('images/nuestrafront.jpg');border-radius: 10px;">
-          </a>
-            <!-- View Map Button -->
-          <div class="text-center">
-            <a href="https://www.google.com/maps/place/Nuestra+Se%C3%B1ora+de+la+Candelaria+Parish+Church/@6.688494,124.6734805,3a,75y,261.65h,90t/data=!3m7!1e1!3m5!1sDrK4NnJTxXm02VVNfYnKMw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3DDrK4NnJTxXm02VVNfYnKMw%26yaw%3D261.6542612339423!7i16384!8i8192!4m14!1m7!3m6!1s0x32f80d431f08d3b3:0x3b02439e76924eb3!2sNuestra+Se%C3%B1ora+de+la+Candelaria+Parish+Church!8m2!3d6.6884762!4d124.6731677!16s%2Fg%2F113gyn7jj!3m5!1s0x32f80d431f08d3b3:0x3b02439e76924eb3!8m2!3d6.6884762!4d124.6731677!16s%2Fg%2F113gyn7jj?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoKLDEwMDc5MjA2N0gBUAM%3D" 
-              target="_blank" 
-              class="btn btn-primary" style="background-color: #98C0D9; color: #fff; border: none; width: 15rem; padding: 1rem;">
-              View Map
-            </a>
-          </div>
-        </div>
-        </div>
+      <div class="col-md-5 imgbridegroom order-md-2 order-1"
+           style="background-image:url(images/bride.jpg);
+           background-size:contain;
+           background-repeat:no-repeat;
+           background-position:center;
+           min-height:40rem;">
       </div>
-
     </div>
 
-   
   </div>
 </section>
 
-<section id="dressCode" class="ftco-section ftco-no-pb">
+<section id="Church" class="ftco-section ftco-no-pb position-relative">
+  <div class="container">
+    <div class="row no-gutters align-items-center mb-5">
+        <div class="col-md-12 heading-section ftco-animate text-center">
+          <span class="subheading subheading-with-line"><small class="pr-2 bg-light">The</small></span>
+          <h2 class="mb-4 pageTitle">Ceremony</h2>
+        </div>
+      <div class="col-12 imgbridegroom">
+            <h2 class="mb-3">Nuestra Señora de la Candelaria Parish</h2>
+            <span><strong>Location: </strong>Lapu-Lapu street, Tacurong City, Philippines</span>
+        <div class="row">
+          <!-- First column -->
+          <div class="col-12 col-md-6 d-flex justify-content-center mb-4 mb-md-0">
+            <img src="images/nuestrafront.jpg" alt="Bride and Groom" class="img-fluid" style="max-height: 40rem;">
+          </div>
+          <!-- Second column -->
+          <div class="col-12 col-md-6 d-flex justify-content-center">
+            <div style="position: relative; width: 100%; padding-bottom: 56.25%;">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.12345!2d124.673069!3d6.6879213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32f80d431f08d3b3%3A0x3b02439e76924eb3!2sNuestra+Se%C3%B1ora+de+la+Candelaria+Parish+Church!5e0!3m2!1sen!2sph!4v1600000000000" 
+                style="position: absolute; top:0; left:0; width:100%; height:100%; border:0; max-height: 40rem;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
 
-   <!-- Dress Code Section -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--  Reception -->
+      <div class="container">
+    <div class="row no-gutters align-items-center mb-5">
+        <div class="col-md-12 heading-section ftco-animate text-center">
+          <span class="subheading subheading-with-line"><small class="pr-2 bg-light">The</small></span>
+          <h2 class="mb-4 pageTitle">Reception</h2>
+        </div>
+
+      <div class="col-12 mb-4 text-end">
+        <h2 class="mb-2">HillSide Resort</h2>
+        <span><strong>Location: </strong> Calean Road, Tacurong City, Philippines</span>
+    </div>
+
+
+      <div class="col-12 imgbridegroom">
+        <div class="row">
+          <!-- Second column -->
+          <div class="col-12 col-md-6 d-flex flex-column align-items-center mb-4 mb-md-0">
+            <img src="images/hillside.jpg" alt="HillSide Resort" class="img-fluid" style="max-height: 40rem; min-height: 40rem;">
+          </div>
+
+          <!-- First column -->
+          <div class="col-12 col-md-6 d-flex justify-content-center">
+              <div style="position: relative; width: 100%; padding-bottom: 56.25%;">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4907.260654331476!2d124.67610707583998!3d6.651720921658273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32f80d007ffb8237%3A0xd025e7559f0d9b81!2sHillside%20Resort!5e1!3m2!1sen!2sph!4v1768731099621!5m2!1sen!2sph" 
+              style="position: absolute; top:0; left:0; width:100%; height:100%; border:0; max-height: 40rem; min-height: 40rem;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade" ></iframe>
+              </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+<section id="dressCode" class="ftco-section ftco-no-pb position-relative">
+  <div class="container">
+  <!-- Dress Code Section -->
     <div class="row justify-content-center mb-5 pb-3">
       <div class="col-md-7 heading-section ftco-animate mb-4">
         <span class="subheading subheading-with-line">
@@ -613,47 +688,44 @@
         </div>
       </div>
     </div>
-
+  </div>
 </section>
 
-
-
-
-    <section id="rsvp" class="ftco-section ftco-no-pb">
+    <section id="Gallery" class="ftco-section ftco-no-pb">
     	<div class="container-wrap">
     		<div class="row no-gutters">
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="project">
-	    				<img src="images/nuestraInside.jpg" class="img-fluid" alt="Colorlib Template" style="height: 100% !important; width: 100%;">
+	    				<img src="images/nuestra800.png" class="img-fluid" alt="Colorlib Template" style="height: 100% !important; width: 100%;">
 	    				<div class="text">
 	    					<span>Ceremony</span>
 	    					<h3><a href="#">Nuestra Señora de la Candelaria Parish</a></h3>
 	    				</div>
-	    				<a href="images/work-1.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+	    				<a href="images/nuestra800.png" class="icon image-popup d-flex justify-content-center align-items-center">
 	    					<span class="icon-expand"></span>
 	    				</a>
     				</div>
     			</div>
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="project">
-	    				<img src="images/work-2.jpg" class="img-fluid" alt="Colorlib Template">
+	    				<img src="images/date800.png" class="img-fluid" alt="Colorlib Template">
 	    				<div class="text">
-	    					<span>Interior Design</span>
-	    					<h3>Office Interior Design</h3>
+	    					<span>Schedule</span>
+	    					<h3>Wedding Date</h3>
 	    				</div>
-	    				<a href="images/work-2.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+	    				<a href="images/date800.png" class="icon image-popup d-flex justify-content-center align-items-center">
 	    					<span class="icon-expand"></span>
 	    				</a>
     				</div>
     			</div>
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="project">
-	    				<img src="images/work-3.jpg" class="img-fluid" alt="Colorlib Template">
+	    				<img src="images/hillside800.png" class="img-fluid" alt="Colorlib Template">
 	    				<div class="text">
-	    					<span>Interior Design</span>
-	    					<h3>Office Interior Design</h3>
+	    					<span>Venue</span>
+	    					<h3>HillSide</h3>
 	    				</div>
-	    				<a href="images/work-3.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+	    				<a href="images/hillside800.png" class="icon image-popup d-flex justify-content-center align-items-center">
 	    					<span class="icon-expand"></span>
 	    				</a>
     				</div>
@@ -722,11 +794,11 @@
     	</div>
     </section>
 
-<section class="ftco-section testimony-section bg-light">
+<section id="entourage" class="ftco-section testimony-section entourage-bg">
   <div class="container">
     <div class="row justify-content-center mb-5 pb-3">
       <div class="col-md-7 heading-section ftco-animate text-center">
-        <span class="subheading subheading-with-line"><small class="pr-2 bg-light">The</small></span>
+        <span class="subheading subheading-with-line"><small class="pr-2">The</small></span>
         <h2 class="mb-4 pageTitle">Entourage</h2>
       </div>
     </div>
@@ -826,92 +898,78 @@
   </div>
 </section>
 
-<section id="RSVP" class="ftco-section bg-light">
-  <div class="container">
-    <div class="row justify-content-center mb-5 pb-3">
-      <div class="col-md-7 heading-section text-center ftco-animate">
-        <span class="subheading subheading-with-line"><small class="pr-2 bg-light">Please</small></span>
-        <h2 class="mb-4">RSVP</h2>
-      </div>
-    </div>
-
-    <div class="row justify-content-center">
-      <div class="col-md-8 text-center">
-        <p class="mb-3" style="font-size: 18px; line-height: 1.6;">
-          We can't wait to celebrate with you all!<br>
-          We have reserved a seat for you.<br>
-          Please confirm by sending a reply through <strong>Facebook Messenger</strong> on or before <strong>FEBRUARY 28, 2026</strong>.
-        </p>
-        <a href="https://www.facebook.com/messages/t/YOURPAGE" class="btn btn-primary btn-lg">Send RSVP</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
 <footer class="ftco-footer ftco-bg-dark ftco-section">
-  <div class="container">
-    <div class="row mb-5">
-      <div class="col-md">
-        <div class="ftco-footer-widget mb-4">
-          <h2 class="ftco-heading-2">RSVP</h2>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-          <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
-            <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-            <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-            <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md">
-        <div class="ftco-footer-widget mb-4 ml-md-4">
-          <h2 class="ftco-heading-2">Links</h2>
-          <ul class="list-unstyled">
-            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Home</a></li>
-            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>About</a></li>
-            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Services</a></li>
-            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Projects</a></li>
-            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Contact</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md">
-          <div class="ftco-footer-widget mb-4">
-          <h2 class="ftco-heading-2">Services</h2>
-          <ul class="list-unstyled">
-            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Architectural Design</a></li>
-            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Interior Design</a></li>
-            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Exterior Design</a></li>
-            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Lighting Design</a></li>
-            <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>AutoCAD Service</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md">
-        <div class="ftco-footer-widget mb-4">
-          <h2 class="ftco-heading-2">Newsletter</h2>
-          <p>Far far away, behind the word mountains, far from the countries.</p>
-          <form action="#" class="subscribe-form">
-            <div class="form-group">
-              <input type="text" class="form-control mb-2 text-center" placeholder="Enter email address">
-              <input type="submit" value="Subscribe" class="form-control submit px-3">
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12 text-center">
-
-        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-      </div>
-    </div>
+  <div class="container text-center">
+    <p>
+      © <script>document.write(new Date().getFullYear());</script>
+      Christian & Judy Ann
+    </p>
   </div>
 </footer>
     
   
+<!-- Floating RSVP Button -->
+<button id="rsvpFloatingBtn" class="rsvp-float-btn" data-toggle="modal" data-target="#rsvpModal">
+  <i class="fas fa-envelope"></i> RSVP
+</button>
+
+
+<!-- ================= RSVP MODAL ================= -->
+<div class="modal fade" id="rsvpModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">RSVP</h5>
+        <button type="button" class="close" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <p style="font-size:16px;">
+          We’re so excited to celebrate our wedding with you 💙<br><br>
+          Please confirm whether you will be attending by filling out the form below<br>
+          on or before <strong>February 28, 2026</strong>.
+        </p>
+
+        <form id="rsvpForm"
+              action="https://docs.google.com/forms/d/e/1FAIpQLScwBcBTm1VwZv4XBwXCIdmFq-UVI5yODlNp3qE4pAt5s_ab_A/formResponse"
+              method="POST"
+              target="hidden_iframe"
+              onsubmit="handleRSVPSubmit();">
+
+          <!-- Name -->
+          <div class="form-group text-left">
+            <label for="guestName"><strong>Name</strong></label>
+            <input type="text" id="guestName" name="entry.1860316287" class="form-control" placeholder="Enter your full name" required>
+          </div>
+
+          <!-- Attendance -->
+          <div class="form-group text-left">
+            <label for="attending"><strong>Attendance</strong></label>
+            <select id="attending" name="entry.968998608" class="form-control" required>
+              <option value="">Select</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+              <option value="Not Sure">Not Sure</option>
+            </select>
+          </div>
+
+          <!-- Submit -->
+          <button id="rsvpBtn" type="submit" class="btn btn-primary btn-block">
+            <span id="btnText">Confirm RSVP</span>
+            <span id="btnSpinner" class="spinner-border spinner-border-sm d-none ml-2"></span>
+          </button>
+
+        </form>
+
+        <iframe name="hidden_iframe" style="display:none;"></iframe>
+        <div id="rsvpMessage" class="mt-3"></div>
+      </div>
+    </div>
+  </div>
+</div>
 
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
@@ -929,13 +987,29 @@
   <script src="js/aos.js"></script>
   <script src="js/jquery.animateNumber.min.js"></script>
   <script src="js/bootstrap-datepicker.js"></script>
-  <!-- <script src="js/jquery.timepicker.min.js"></script>
-  <script src="js/j"></script> -->
   <script src="js/scrollax.min.js"></script>
-  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="js/google-map.js"></script> -->
   <script src="js/main.js"></script>
 <script>
+function handleRSVPSubmit() {
+  const btn = document.getElementById("rsvpBtn");
+  const spinner = document.getElementById("btnSpinner");
+  const text = document.getElementById("btnText");
+
+  btn.disabled = true;
+  spinner.classList.remove("d-none");
+  text.textContent = "Submitting...";
+
+  setTimeout(() => {
+    document.getElementById("rsvpMessage").innerHTML =
+      '<div class="alert alert-success">Thank you! Your RSVP has been submitted 💙</div>';
+
+    btn.disabled = false;
+    spinner.classList.add("d-none");
+    text.textContent = "Confirm RSVP";
+    document.getElementById("rsvpForm").reset();
+  }, 1500);
+}
+
   function startCountdown(targetDate, ids) {
     const countDate = new Date(targetDate).getTime();
     return setInterval(() => {
@@ -969,11 +1043,10 @@
   }
 
   document.addEventListener("DOMContentLoaded", function() {
-    // Start countdowns only after DOM is ready
-    startCountdown("June 15, 2026 10:00:00", {
+    startCountdown("March 26, 2026 10:00:00", {
       days:"days1", hours:"hours1", minutes:"minutes1", seconds:"seconds1"
     });
-    startCountdown("June 15, 2026 10:00:00", {
+    startCountdown("March 26, 2026 10:00:00", {
       days:"days2", hours:"hours2", minutes:"minutes2", seconds:"seconds2"
     });
   });

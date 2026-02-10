@@ -206,7 +206,7 @@ async function verifyCode() {
     // Safety check: if button is already processing, do nothing
     if (unlockBtn.disabled) return;
 
-    const storedHash = "a6e3c3d3909fe22007d935288abc243980f634d09791e066d3a1cddb4107028f";
+    const storedHash = "a4346cb093167f255272af71a157d8591b6ce0fe5083b61d13ba44d840d4183b";
 
     try {
         const inputHash = await sha256(userInput);

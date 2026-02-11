@@ -458,7 +458,15 @@ img {
 
   </head>
   <body>
-    
+<div id="startOverlay" 
+     style="position:fixed;inset:0;
+            display:flex;align-items:center;justify-content:center;
+            cursor:pointer;z-index:9999;">
+    <div style="color:white;font-size:20px;text-shadow:0 0 10px rgba(0,0,0,0.7);">
+        Click anywhere to view invitation
+    </div>
+</div>
+
 	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
         <a class="navbar-brand wedding-initials" href="index.html">
@@ -698,18 +706,20 @@ img {
       <div class="col-md-12">
         <h5 class="mb-2 entourageTitle">Principal Sponsors</h5>
           <ul class="list-unstyled">
-            <li class="entourageNames">Mr. Ian C. Besañes</li>
-            <li class="entourageNames">Mrs. Chyl F. Besañes</li>
             <li class="entourageNames">Mr. Edwin G. Mosqueda</li>
             <li class="entourageNames">Mrs. Nena H. Mosqueda</li>
+            <li class="entourageNames">Mr. Ian C. Besañes</li>
+            <li class="entourageNames">Mrs. Chyl F. Besañes</li>
             <li class="entourageNames">Mrs. Mary Ann Bañas</li>
             <li class="entourageNames">Mrs. Catherine B. Antonino</li>
             <li class="entourageNames">Mrs. Ailen Asodisen</li>
             <li class="entourageNames">Mrs. Nelia Duque</li>
             <li class="entourageNames">Mr. Joel Demorito</li>
             <li class="entourageNames">Mrs. Norigen Diesto</li>
-             <li class="entourageNames">Mr. Eufemio Galimba</li>
+            <li class="entourageNames">Mr. Eufemio Galimba</li>
             <li class="entourageNames">Mrs. Maribel B. Galimba</li>
+            <li class="entourageNames">Mr. Alberto G. Calise</li>
+            <li class="entourageNames">Mrs. Helen M. Calise</li>
           </ul>
       </div>
     </div>
@@ -810,12 +820,12 @@ img {
 <section id="dressCode" class="ftco-section ftco-no-pb position-relative">
   <div class="container">
   <!-- Dress Code Section -->
-    <div class="row justify-content-center mb-5 pb-3">
+    <div class="row justify-content-center">
       <div class="col-md-7 heading-section ftco-animate mb-4">
         <span class="subheading subheading-with-line">
           <small class="pr-2 bg-white">Dress Code</small>
         </span>
-        <h2 class="mb-4">What to wear?</h2>
+        <h2 class="mb-2">What to wear?</h2>
         <p>
           We would be delighted if you would join us in celebrating by wearing
           semi formal attire.
@@ -826,10 +836,10 @@ img {
       </div>
     </div>
       <!-- Color Palette Section -->
-    <div class="row mt-3 justify-content-center">
+    <div class="row mt-0 justify-content-center">
       <div class="col-md-10 text-center">
         <div class="d-flex justify-content-center"
-             style="gap:40px; margin-top:15px;">
+             style="gap:50px;">
           
           <div style="text-align:center;">
             <div style="
@@ -1076,7 +1086,7 @@ img {
 
  <section class="ftco-section testimony-section bg-light" id="faq">
       <div class="container">
-        <div class="row justify-content-center mb-2 pb-3">
+        <div class="row justify-content-center">
           <div class="col-md-7 heading-section ftco-animate">
           	<span class="subheading subheading-with-line"><small class="pr-2 bg-light">The</small></span>
             <h2 class="mb-4">FAQ</h2>
@@ -1086,7 +1096,7 @@ img {
           <div class="col-md-12">
             <div class="carousel-testimony owl-carousel">
               <div class="item">
-                <div class="testimony-wrap p-4 pb-5">
+                <div class="testimony-wrap">
                   <div class="text">
                     <h5 class="mb-3 pl-4 line">Can I bring a plus-one or another guest?</h5>
                       <span>
@@ -1100,18 +1110,18 @@ img {
                 </div>
               </div>
               <div class="item">
-                <div class="testimony-wrap p-4 pb-5">
+                <div class="testimony-wrap">
                   <div class="text">
                     <h5 class="mb-3 pl-4 line">Is there a dress code?</h5>
                     <span>
-                      We kindly encourage guests to wear formal attire in neutral 
-                      or soft tones to complement our wedding theme.
+                      We kindly encourage guests to wear semi formal attire 
+                      and in shade of our color palette to complement our wedding theme.
                     </span>
                   </div>
                 </div>
               </div>
               <div class="item">
-                <div class="testimony-wrap p-4 pb-5">
+                <div class="testimony-wrap">
                   <div class="text">
                     <h5 class="mb-3 pl-4 line">What gift should we bring?</h5>
                     <span>Your presence is truly the greatest gift we could ask for.
@@ -1206,7 +1216,9 @@ img {
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
-
+<audio id="bgMusic" loop>
+    <source src="music/WeAre.mp3" type="audio/mpeg">
+</audio>
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/popper.min.js"></script>
@@ -1222,6 +1234,14 @@ img {
   <script src="js/scrollax.min.js"></script>
   <script src="js/main.js"></script>
 <script>
+   const overlay = document.getElementById("startOverlay");
+    const audio = document.getElementById("bgMusic");
+
+    overlay.addEventListener("click", function () {
+        audio.play();
+        overlay.style.display = "none";
+    });
+
 function handleRSVPSubmit() {
   const btn = document.getElementById("rsvpBtn");
   const spinner = document.getElementById("btnSpinner");

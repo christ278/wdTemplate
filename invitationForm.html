@@ -22,15 +22,14 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
-
-
 <style>
-/* =================================
-   GLOBAL SAFETY NET
-   ================================= */
+/* =========================
+   GLOBAL RESET
+========================= */
 html, body {
   width: 100%;
   overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
 }
 
 img {
@@ -40,108 +39,31 @@ img {
 }
 
 /* =========================
-   SECTION & BACKGROUND
-   ========================= */
+   HERO / HOME SECTION
+========================= */
 #home {
   position: relative;
   overflow: hidden;
-}
-
-/* Desktop defaults (NO fixed height) */
-.js-fullheight {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
 }
 
-.home-short {
-  min-height: 90vh;
-}
-
-/* Modern mobile browsers (safe viewport units) */
-@supports (height: 100svh) {
-  .js-fullheight {
-    min-height: 100svh;
-  }
-
-  .home-short {
-    min-height: 90svh;
-  }
-}
-
-/* Gradient Background */
-.gradient-bg {
-  /* Background image with a dark overlay */
-  background: 
-    linear-gradient(rgba(10, 37, 64, 0.7), rgba(10, 37, 64, 0.7)), 
-    url('images/JUL01465.jpg') no-repeat center center;
-  background-size: cover;
-}
-
-.countDownBG{
-    background: linear-gradient(rgba(10, 37, 64, 1), rgba(10, 37, 64, 1));
-    padding: 2rem;
-}
-
-/* Container layering for decorations */
-#home .container,
-#home .row,
-#home .col-md-10 {
-  position: relative;
-  z-index: 2;
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(44,62,80,0.7), rgba(74,109,140,0.7)),
+              url('images/JUL01465.jpg') center center / cover no-repeat;
+  z-index: 0;
 }
 
 /* =========================
-   FLORAL DECORATIONS
-   ========================= */
-.floral-left,
-.floral-right,
-.floral-right-top {
-  pointer-events: none;
-}
-
-.floral-left {
-  position: absolute;
-  top: 10%;
-  width: 15vw;
-  max-width: 300px;
-  opacity: 0.6;
-  z-index: 1;
-  height: 80%;
-  left: -5vw;
-}
-
-.floral-right {
-  position: absolute;
-  top: 10%;
-  width: 15vw;
-  max-width: 300px;
-  opacity: 0.6;
-  z-index: 1;
-  height: 60%;
-  right: -5vw;
-}
-
-.floral-right-top {
-  position: absolute;
-  width: 10vw;
-  opacity: 0.6;
-  z-index: 1;
-}
-
-/* Tablet */
-@media (max-width: 768px) {
-  .floral-left,
-  .floral-right {
-    width: 25vw;
-    top: 20%;
-  }
-
-  .floral-left { left: -10vw; }
-  .floral-right { right: -10vw; }
-}
-
-/* =========================
-   WEDDING INTRO
-   ========================= */
+   WEDDING INTRO & NAMES
+========================= */
 .wedding-intro {
   font-family: 'Satisfy', cursive;
   color: #F6F8FA;
@@ -164,36 +86,8 @@ img {
   border-radius: 1px;
 }
 
-.wedding-initials {
-  font-family: 'Great Vibes', cursive;
-  font-size: 20px;
-}
-
-/* =========================
-   WEDDING NAMES & TITLES
-   ========================= */
-.wedding-names,
-.ourstoryTitle,
-.pageTitle{
-  font-family: 'Great Vibes', cursive;
-  font-weight: 400;
-}
-
-.entourageTitle {
-  font-family: 'Great Vibes', cursive;
-  font-weight: 500;
-  color: #87b8ff;
-}
-
-.masterofCeremony{
-    font-family: 'Great Vibes', cursive;
-    font-weight: 500;
-    font-size: clamp(50px, 5vw, 50px) !important;
-    color: #1E3A8A;
-    text-shadow: white;
-}
-
 .wedding-names {
+  font-family: 'Great Vibes', cursive;
   font-size: clamp(36px, 7vw, 105px);
   color: #F6F8FA;
   text-shadow: 0 2px 6px rgba(10,37,64,0.45),
@@ -201,89 +95,41 @@ img {
   margin-bottom: 15px;
 }
 
-.ourstoryTitle {
-  font-size: clamp(26px, 4vw, 60px);
-  color: #F6F8FA;
-}
-
-.pageTitle {
-  font-size: clamp(40px, 6vw, 80px) !important;
-}
-
-.entourageTitle {
-  font-size: clamp(30px, 4vw, 40px) !important;
-}
-
-.entourageNames {
-  font-weight: 340;
-  color: white;
-}
-
-/* =========================
-   DATE BADGE
-   ========================= */
+/* Date Badge */
 .wedding-date-box {
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
-  gap: 18px;
-  padding: 16px 22px;
-  /* margin: 25px 0 30px; */
-  text-transform: uppercase;
-}
-
-.date-month,
-.date-year {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(12px, 2vw, 18px);
-  letter-spacing: 3px;
-  color: #F6EEE3;
-  opacity: 0.9;
-}
-
-.date-day {
-  border-left: 2px solid #F6EEE3;
-  border-right: 2px solid #F6EEE3;
-  padding: 0 15px;
-  text-align: center;
-}
-
-.date-weekday {
-  display: block;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
-  letter-spacing: 3px;
-  color: #F6EEE3;
-  margin-bottom: 4px;
-}
-
-.date-number {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(28px, 5vw, 65px);
-  font-weight: 700;
-  color: #8EB1DF;
-  line-height: 1;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  padding: 1rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  margin-top: 1.5rem;
 }
 
 /* =========================
-   COUNTDOWN (ONE ROW ALWAYS)
-   ========================= */
+   COUNTDOWN
+========================= */
 .countdown-wrapper {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  display: flex;
   justify-content: center;
-  max-width: 520px;
-  margin-inline: auto;
-  z-index: 2;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  position: absolute;
+  bottom: 2rem;
+  width: 100%;
+  padding: 0 1rem;
+  z-index:1;
 }
 
 .countdown-box {
-  min-width: 0;
-  background: rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(10px);
-  border-radius: 18px;
-  padding: 16px 12px;
-  box-shadow: 0 15px 40px rgba(10, 37, 64, 0.35);
+  background: rgba(255,255,255,0.15);
+  padding:0.8rem 1rem;
+  border-radius:12px;
+  box-shadow:0 6px 12px rgba(0,0,0,0.25);
+  min-width:60px;
+  text-align:center;
 }
 
 .clscdtime {
@@ -303,74 +149,180 @@ img {
 }
 
 /* =========================
-   MOBILE TWEAKS
-   ========================= */
-@media (max-width: 576px) {
-  .wedding-names {
-    font-size: clamp(28px, 10vw, 48px);
-  }
+   ENVELOPE OVERLAY
+========================= */
+:root {
+  --navy: #001F3F;
+  --slate: #4A5D6E;
+  --off-white: #FCFBF9;
+  --lightb: #909ba5;
+}
 
-  .wedding-intro {
-    font-size: 18px;
-    margin: 18% auto 15px;
-  }
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(rgba(25, 44, 66, 0.7), rgba(120, 161, 250, 0.6));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  perspective: 1000px;
+  transition: opacity 1s ease, visibility 1s ease;
+}
 
-  .countdown-wrapper {
-    gap: 8px;
-  }
+.overlay.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
 
-  .countdown-box {
-    padding: 5px 6px;
-    border-radius: 14px;
-  }
+.envelope-wrapper {
+  width: 80%;
+  max-width: 480px;
+  aspect-ratio: 3 / 2;
+  cursor: pointer;
+  position: relative;
+}
 
-  .clscdtime {
-    font-size: 1.8rem;
-  }
+.envelope {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+  background-color: var(--lightb);
+  position: relative;
+}
 
-  .eventcd {
-    font-size: 0.7rem;
-    letter-spacing: 1px;
-  }
+.flap {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 60%;
+  background-color: var(--navy);
+  transform-origin: top;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 85%, 0 100%);
+  z-index: 6;
+}
 
-  /* ✅ FIXED HEIGHT ISSUE */
-  .js-fullheight {
-    min-height: 88vh;
-  }
+.pocket {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 65%;
+  background: var(--slate);
+  clip-path: polygon(0 20%, 50% 0, 100% 20%, 100% 100%, 0 100%);
+  z-index: 5;
+}
 
-  .home-short {
-    min-height: 60vh;
-  }
+.card {
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  width: 90%;
+  height: 95%;
+  background: var(--off-white);
+  border-radius: 5px 5px 0 0;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(0) scale(0.8);
+  transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1), z-index 0.1s step-end;
+  z-index: 4;
+}
 
-    .project {
-    margin-bottom: 10px;
-  }
+.seal {
+  width: 80px;
+  height: 80px;
+  background: url('images/cjLogo.png') center/cover;
+  border-radius: 50%;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  border: 2px solid rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.seal-group {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.overlay.open .flap {
+  transform: rotateX(180deg);
+  z-index: 1;
+}
+
+.overlay.open .card {
+  transform: translateY(-50%) scale(1);
+  z-index: 10;
+}
+
+.overlay.open .seal-group {
+  opacity: 0;
+  transform: translate(-50%, -100%) scale(0.5);
 }
 
 /* =========================
-   MISC
-   ========================= */
-.groom-profile .groom-name {
-  font-size: 22px;
-  font-weight: bold;
-  color: #1E3A8A;
+   RESPONSIVE
+========================= */
+
+@media (min-width: 992px) {
+  #home .hero-bg {
+    background: linear-gradient(135deg, rgba(44,62,80,0.7), rgba(74,109,140,0.7)), url('images/JUL01465_phone.jpg') center center / cover no-repeat !important;
+  }
 }
 
-.groomsmen-list li {
-  padding: 4px 0;
-  font-family: 'Playfair Display', serif;
+@media (max-width: 768px) {
+  .envelope-wrapper { width: 90%; max-width: 320px; }
+  .card { height: 90%; }
+  .seal { width: 70px; height: 70px; }
+  .clscdtime { font-size: 1.8rem; }
+  .wedding-names { font-size: clamp(28px, 10vw, 48px); }
+  .wedding-intro { font-size: 18px; margin: 18% auto 15px; }
+
+  #home .hero-bg {
+    background: linear-gradient(135deg, rgba(44,62,80,0.7), rgba(74,109,140,0.7)), url('images/JUL01465_phone.jpg') center center / cover no-repeat !important;
+  }
 }
 
-.zoom-out {
-  background-size: 90%;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0.2;
+@media (max-width: 480px) {
+  .envelope-wrapper { width: 95%; max-width: 280px; }
+  .card { height: 85%; }
+  .seal { width: 50px; height: 50px; }
+  #home .hero-bg {
+    background: linear-gradient(135deg, rgba(44,62,80,0.7), rgba(74,109,140,0.7)), url('images/JUL01465_phone.jpg') center center / cover no-repeat !important;
+  }
 }
 
-/* =========================
-   FLOATING RSVP BUTTON - RIGHT MIDDLE
-   ========================= */
+.entourageTitle {
+  font-family: 'Great Vibes', cursive;
+  font-weight: 500;
+  color: #87b8ff;
+}
+
+.pageTitle {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(3rem, 5vw, 4rem);
+    color: #051c35;
+    text-shadow: 2px 2px 6px rgba(51, 51, 51, 0.7);
+    margin-bottom: 1rem;
+}
+
+.entourageTitle{
+   font-family: 'Great Vibes', cursive;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: #67cdffcb;
+    text-shadow: 2px 2px 6px rgba(10, 10, 10, 0.7);
+    margin-bottom: 1rem;
+}
+
 /* =========================
    FLOATING RSVP BUTTON - RIGHT MIDDLE
    ========================= */
@@ -379,7 +331,7 @@ img {
   top: 40%;
   right: 20px;
   transform: translateY(-50%);
-  z-index: 9999;
+  z-index: 7777;
 
   background: #ee583a; /* bright pink */
   color: #fff;
@@ -421,717 +373,211 @@ img {
     transform: translateY(-50%);
   }
 }
-
-.entourage-bg {
-  background-image: url('images/NavyFloral.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  z-index: 1;
-  font-weight: 500;
-}
-
-.masterofCeremonyPic {
-  background-image: url('images/dustyFloral.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  z-index: 1;
-  opacity: 80%;
-  /* min-height: 40rem; */
-}
-#Gallery .project {
-  position: relative;
-  aspect-ratio: 4 / 6; /* tall gallery look */
-  overflow: hidden;
-}
-
-#Gallery .project img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 </style>
 
 
+
   </head>
-  <body>
-<div id="startOverlay" 
-     style="position:fixed;inset:0;
-            display:flex;align-items:center;justify-content:center;
-            cursor:pointer;z-index:9999;">
-    <div style="color:white;font-size:20px;text-shadow:0 0 10px rgba(125, 125, 125, 0.7);">
-  
+  <body  style="overflow:hidden;">
+<div id="startOverlay" class="overlay">
+  <div class="envelope-wrapper" onclick="openEnvelope()">
+
+    <div class="envelope">
+
+      <div class="flap"></div>
+      <div class="pocket"></div>
+
+      <div class="seal-group">
+        <div class="seal"></div>
+      </div>
+
+      <div class="card" style="
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+        padding: 1rem 0.8rem; 
+        font-family: 'Poppins', sans-serif; 
+        overflow: hidden; 
+        box-sizing: border-box;
+      ">
+        <h1 class="mb-2 pageTitle">See You!</h1>
+      </div>
     </div>
+
+  </div>
 </div>
 
-	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-	    <div class="container">
+  <div id="invitationDetails" style="display:none;">
+
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+      <div class="container">
         <a class="navbar-brand wedding-initials" href="index.html">
         <img src="images/cjLogo.png" alt="C & J Wedding Logo" style="height: 50px;">
       </a>
-	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="oi oi-menu"></span> Menu
+        </button>
 
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav ml-auto">
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav ml-auto">
             <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="#ourstory" class="nav-link">Our Story</a></li>
             <li class="nav-item"><a href="#Church" class="nav-link">Ceremony & Reception</a></li>
             <li class="nav-item"><a href="#entourage" class="nav-link">Entourage</a></li>
             <li class="nav-item"><a href="#Gallery" class="nav-link">Gallery</a></li>
+            <li class="nav-item"><a href="#weddingTeam" class="nav-link">Wedding Team</a></li>
             <li class="nav-item"><a href="#faq" class="nav-link">FAQ</a></li>
-	        </ul>
-	      </div>
-	    </div>
-	  </nav>
-    <!-- END nav -->
-<!-- ================= HERO ================= -->
-<section id="home" class="home-short gradient-bg">
-  <div class="container">
-    <div class="row align-items-center justify-content-center text-center position-relative">
-      <div class="col-12 col-md-10">
-        <p class="wedding-intro">
-          Together with our families,<br>
-          we joyfully invite you to celebrate the wedding of
-        </p>
 
-      <div class="pb-4" style="text-align: center; padding-top: 4rem;">
-        <h1 class="wedding-names mb-2" style="display: inline-flex; justify-content: center; align-items: center; gap: 0.5rem; white-space: nowrap;">
-          &nbsp;&nbsp;&nbsp;&nbsp;Christian
-          <img src="images/groomandbrideWhite.png" alt="and" style="height: 1.2em;">
-          Judy Ann
-        </h1>
-    </div>
-
-
-        <div class="wedding-date-box">
-          <span class="date-month">March</span>
-          <div class="date-day">
-            <span class="date-weekday">Thursday</span>
-            <span class="date-number">26</span>
-          </div>
-          <span class="date-year">2026</span>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="countDownBG">
-          <!-- Countdown -->
-        <div class="countdown-wrapper">
-          <div class="countdown-box text-center">
-            <span id="days2" class="clscdtime">00</span>
-            <p class="eventcd">Days</p>
-          </div>
-          <div class="countdown-box text-center">
-            <span id="hours2" class="clscdtime">00</span>
-            <p class="eventcd">Hrs</p>
-          </div>
-          <div class="countdown-box text-center">
-            <span id="minutes2" class="clscdtime">00</span>
-            <p class="eventcd">Mins</p>
-          </div>
-          <div class="countdown-box text-center">
-            <span id="seconds2" class="clscdtime">00</span>
-            <p class="eventcd">Sec</p>
-          </div>
-        </div>
-</section>
-
-<section id="" class="ftco-section">
-  <div class="container">
-
-    <div class="row no-gutters align-items-center mb-5">
-      <div class="col-12 imgbridegroom">
-        <div class="row">
-          <!-- First column -->
-          <div class="col-12 col-md-6 d-flex justify-content-center mb-4 mb-md-0">
-            <img src="images/JUL01493.jpg" alt="Bride and Groom" class="img-fluid" style="max-height: 40rem;">
-          </div>
-          <!-- Second column -->
-          <div class="col-12 col-md-6 d-flex justify-content-center">
-            <img src="images/dateBig.png" alt="Calendar" class="img-fluid" style="max-height: 40rem;">
-          </div>
+            
+          </ul>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </nav>
+        <!-- END nav -->
+    <!-- ================= HERO ================= -->
+<section id="home" style="
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    overflow: hidden;
+    padding: 2rem 1rem;
+">
 
-<!-- ================= COUPLE ================= -->
-<section id="ourstory" class="ftco-section">
-  <div class="container">
-<hr>
-    <div class="row no-gutters align-items-center">
-      <div class="col-md-7 wrap-about order-md-1 order-1">
-     <div class="container">
-      <div class="row justify-content-center">
-          <div class="col-md-8 heading-section ftco-animate text-center ourstory">
-              <h1 class="mb-4 pageTitle">Our Story</h2>
-              <div class="pl-md-4 border-line">
-                  <p class="ourstory">
-                      We first met as classmates in <strong>Tacurong National High School</strong>, 
-                      but it was during our <strong>4th year</strong> that something truly special began to bloom between us. 
-                      From classmates to friends, and then to a couple, we started a journey together that would last <strong>13 amazing years</strong>.
-                  </p>
+  <!-- Background overlay with responsive images -->
+  <div class="hero-bg" style="
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(44,62,80,0.7), rgba(74,109,140,0.7)), url('images/JUL01465.jpg') center center / cover no-repeat;
+      z-index: 0;
+  "></div>
 
-                  <p  class="ourstory">
-                      Through all the laughter, challenges, and countless adventures, our love only grew stronger. 
-                      We cheered each other on, supported each other’s dreams, and found comfort knowing we could always count on one another.
-                  </p>
-
-                  <p class="ourstory">
-                      Today, we are overjoyed to start a new chapter — one filled with love, commitment, and the promise of a lifetime together. 
-                      What began as friendship in high school has blossomed into a love story that we are proud to share with all of you.
-                  </p>
-              </div>
-          </div>
-      </div>
-  </div>
-      </div>
-
-      <div class="col-md-5 imgbridegroom order-md-2 order-2"
-           style="background-image:url(images/picAA.png);
-           background-size:contain;
-           background-repeat:no-repeat;
-           background-position:center;
-           min-height:40rem;">
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section id="Church" class="ftco-section ftco-no-pb position-relative">
-  <div class="container">
-    <div class="row no-gutters align-items-center mb-5">
-        <div class="col-md-12 heading-section ftco-animate text-center">
-          <span class="subheading subheading-with-line"><small class="pr-2 bg-light">The</small></span>
-          <h2 class="mb-4 pageTitle">Ceremony</h2>
-        </div>
-      <div class="col-12 imgbridegroom">
-            <h2 class="mb-3">Nuestra Señora de la Candelaria Parish</h2>
-            <span><strong>Location: </strong>Lapu-Lapu street, Tacurong City, Philippines</span>
-        <div class="row">
-          <!-- First column -->
-          <div class="col-12 col-md-6 d-flex justify-content-center mb-4 mb-md-0">
-            <img src="images/nuestrafront.jpg" alt="Bride and Groom" class="img-fluid" style="max-height: 40rem;">
-          </div>
-          <!-- Second column -->
-          <div class="col-12 col-md-6 d-flex justify-content-center">
-            <div style="position: relative; width: 100%;">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.12345!2d124.673069!3d6.6879213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32f80d431f08d3b3%3A0x3b02439e76924eb3!2sNuestra+Se%C3%B1ora+de+la+Candelaria+Parish+Church!5e0!3m2!1sen!2sph!4v1600000000000" 
-                style="position: absolute; top:0; left:0; width:100%; height:100%; border:0; max-height: 40rem;" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade">
-              </iframe>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!--  Reception -->
-  <div class="container">
-    <div class="row no-gutters align-items-center mb-5">
-        <div class="col-md-12 heading-section ftco-animate text-center">
-          <span class="subheading subheading-with-line"><small class="pr-2 bg-light">The</small></span>
-          <h2 class="mb-4 pageTitle">Reception</h2>
-        </div>
-
-      <div class="col-12 mb-4 text-end">
-        <h2 class="mb-2">Take Off Place</h2>
-        <span><strong>Location: </strong> Brgy. Buenaflor, Tacurong City, Philippines</span>
-    </div>
-
-
-      <div class="col-12 imgbridegroom">
-        <div class="row">
-          <!-- Second column -->
-          <div class="col-12 col-md-6 d-flex flex-column align-items-center mb-4 mb-md-0">
-            <img src="images/takeoffPlace.jpg" alt="Take Off Place" class="img-fluid" style="max-height: 40rem; min-height: 30rem;">
-          </div>
-
-          <!-- First column -->
-          <div class="col-12 col-md-6 d-flex justify-content-center">
-              <div style="position: relative; width: 100%;">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1896.136074400204!2d124.65758865555438!3d6.704063531261458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32f80de81dbc8be5%3A0x5cc7aa00bac77a28!2sTake%20Off%20Place!5e1!3m2!1sen!2sph!4v1769521962730!5m2!1sen!2sph" width="100%" height="480" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-              </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="entourage" class="ftco-section testimony-section entourage-bg">
-  <div class="container">
-    <div class="row justify-content-center mb-5 pb-3">
-      <div class="col-md-7 heading-section ftco-animate text-center">
-        <span class="subheading">
-          <small class="pr-2" style="color: white;">The</small>
-      </span>
-        <h2 class="mb-4 pageTitle" style="color: white;">Entourage</h2>
-      </div>
-    </div>
-
-    <!-- Parents of Groom & Bride -->
-    <div class="row justify-content-center mb-4 text-center">
-      <div class="col-md-6">
-        <h5 class="mb-2 entourageTitle">Parents of the Groom</h5>
-        <p class="entourageNames"class="entourageNames">Mrs. Rosemarie L. Bade</p>
-      </div>
-      <div class="col-md-6">
-        <h5 class="mb-2 entourageTitle">Parents of the Bride</h5>
-          <ul class="list-unstyled">
-            <li class="entourageNames">Mr. Jose Poe M. Galanida</li>
-            <li class="entourageNames">Mrs. Arlyn A. Galanida</li>
-          </ul>
-      </div>
-    </div>
-
-    <!-- Principal Sponsors -->
-    <div class="row justify-content-center mb-4 text-center">
-      <div class="col-md-12">
-        <h5 class="mb-2 entourageTitle">Principal Sponsors</h5>
-          <ul class="list-unstyled">
-            <li class="entourageNames">Mr. Edwin G. Mosqueda</li>
-            <li class="entourageNames">Mrs. Nena H. Mosqueda</li>
-            <li class="entourageNames">Mr. Ian C. Besañes</li>
-            <li class="entourageNames">Mrs. Chyl F. Besañes</li>
-            <li class="entourageNames">Mrs. Mary Ann Bañas</li>
-            <li class="entourageNames">Mrs. Catherine B. Antonino</li>
-            <li class="entourageNames">Mrs. Ailen Asodisen</li>
-            <li class="entourageNames">Mrs. Nelia Duque</li>
-            <li class="entourageNames">Mr. Joel Demorito</li>
-            <li class="entourageNames">Mrs. Norigen Diesto</li>
-            <li class="entourageNames">Mr. Eufemio Galimba</li>
-            <li class="entourageNames">Mrs. Maribel B. Galimba</li>
-            <li class="entourageNames">Mr. Alberto G. Calise</li>
-            <li class="entourageNames">Mrs. Helen M. Calise</li>
-          </ul>
-      </div>
-    </div>
-
-    <!-- Best Man & Maid of Honor -->
-    <div class="row justify-content-center mb-4 text-center">
-      <div class="col-md-6">
-        <h5 class="mb-2 entourageTitle">Best Man</h5>
-        <p class="entourageNames">Mr. Rolenber L. Bade</p>
-      </div>
-      <div class="col-md-6">
-        <h5 class="mb-2 entourageTitle">Maid of Honor</h5>
-        <p class="entourageNames">Ms. Pauline Jane A. Galanida</p>
-      </div>
-    </div>
-
-    <!-- Groomsmen & Bridesmaids -->
-    <div class="row justify-content-center mb-4 text-center">
-      <div class="col-md-6">
-        <h5 class="mb-2 entourageTitle">Groomsmen</h5>
-          <ul class="list-unstyled">
-            <li class="entourageNames">Mr. Kenneth Mark Bade</li>
-            <li class="entourageNames">Mr. Karl Marwin Bade</li>
-            <li class="entourageNames">Mr. Jude Belgira</li>
-            <li class="entourageNames">Mr. Janfred A. Deniega</li>
-            <li class="entourageNames">Mr. Justin B. Sinoy</li>
-          </ul>
-      </div>
-      <div class="col-md-6">
-        <h5 class="mb-2 entourageTitle">Bridesmaids</h5>
-          <ul class="list-unstyled">
-            <li class="entourageNames">Ms. Krisha Ann B. Cristobas</li>
-            <li class="entourageNames">Ms. Lerien Rose L. Bade</li>
-            <li class="entourageNames">Ms. Swellen Sareno</li>
-            <li class="entourageNames">Ms. Princess Angel Arcena</li>
-            <li class="entourageNames">Ms. Erich Jay Borres</li>
-          </ul>
-      </div>
-    </div>
-
-    <!-- Candle, Veil & Cord Sponsors -->
-    <div class="row justify-content-center mb-4 text-center">
-      <div class="col-md-4">
-        <h5 class="mb-2 entourageTitle">Candle Sponsors</h5>
-           <ul class="list-unstyled">
-            <li class="entourageNames">Mr. Mhel Toquirre</li>
-            <li class="entourageNames">Ms. Ellen Rose L. Bade</li>
-          </ul>
-      </div>
-      <div class="col-md-4">
-        <h5 class="mb-2 entourageTitle">Veil Sponsors</h5>
-          <ul class="list-unstyled">
-            <li class="entourageNames">Mr. Jerry Cristobas</li>
-            <li class="entourageNames">Mrs. Jocelyn B. Cristobas</li>
-          </ul>
-      </div>
-      <div class="col-md-4">
-        <h5 class="mb-2 entourageTitle">Cord Sponsors</h5>
-          <ul class="list-unstyled">
-            <li class="entourageNames">Mr. Cesar T. Salloman Jr.</li>
-            <li class="entourageNames">Mrs. Michelle T. Salloman</li>
-          </ul>
-      </div>
-    </div>
-
-    <!-- Ring, Bible & Coin Bearers -->
-    <div class="row justify-content-center mb-4 text-center">
-      <div class="col-md-4">
-        <h5 class="mb-2 entourageTitle">Ring Bearer</h5>
-        <p class="entourageNames">Prince Gelo Arcena</p>
-      </div>
-      <div class="col-md-4">
-        <h5 class="mb-2 entourageTitle">Bible Bearer</h5>
-        <p class="entourageNames">Jhandy D. Burcag</p>
-      </div>
-      <div class="col-md-4">
-        <h5 class="mb-2 entourageTitle">Coin Bearer</h5>
-        <p class="entourageNames">Kin Jiro A. Deniega</p>
-      </div>
-    </div>
-
-    <!-- Flower Girls -->
-    <div class="row justify-content-center mb-4 text-center">
-      <div class="col-md-12">
-        <h5 class="mb-2 entourageTitle">Flower Girls</h5>
-             <ul class="list-unstyled">
-            <li class="entourageNames">Samantha Faye Genandoy</li>
-            <li class="entourageNames">Charmaine B. Antonino</li>
-            <li class="entourageNames">Charlotte B. Antonino</li>
-            <li class="entourageNames">Jerillen B. Acosta</li>
-          </ul>
-      </div>
-    </div>
+  <div class="container" style="max-width: 900px; z-index: 1; position: relative;">
     
+    <!-- Intro -->
+    <p style="
+      font-size: clamp(1rem, 3vw, 1.3rem);
+      font-weight: 300;
+      letter-spacing: 0.5px;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      color: #E0EFFF;
+    ">
+      Together with our families,<br>
+      we joyfully invite you to celebrate the wedding of
+    </p>
+
+    <!-- Couple Names -->
+    <h1 style="
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(2rem, 6vw, 5.5rem);
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.8rem;
+      color: #FFF;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+      flex-wrap: wrap;
+    ">
+      Christian Jeed & Judy Ann
+    </h1>
+    <br>
+    <!-- Wedding Date Box -->
+    <div style="
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
+      padding: 1rem 2rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      margin-top: 1.5rem;
+    ">
+      <span style="font-size: clamp(1rem, 2.5vw, 1.2rem); font-weight:500; letter-spacing:0.5px;">March 26, 2026</span>
+      <span style="font-size: clamp(0.8rem, 2vw, 1rem); font-weight:300; opacity:0.85;">Thursday</span>
+    </div>
+
   </div>
-</section>
 
-<section id="dressCode" class="ftco-section ftco-no-pb position-relative">
-  <div class="container">
-  <!-- Dress Code Section -->
-    <div class="row justify-content-center">
-      <div class="col-md-7 heading-section ftco-animate mb-4">
-        <span class="subheading subheading-with-line">
-          <small class="pr-2 bg-white">Dress Code</small>
-        </span>
-        <h2 class="mb-2">What to wear?</h2>
-        <p>
-          We would be delighted if you would join us in celebrating by wearing
-          semi formal attire.
-        </p>
-        <p>
-          We also highly encourage you to dress in the shade of our color palette.
-        </p>
-      </div>
+  <!-- Countdown -->
+  <div style="
+    position:absolute;
+    bottom: 2rem;
+    width: 100%;
+    display:flex;
+    justify-content:center;
+    gap:0.8rem;
+    flex-wrap: wrap;
+    z-index:1;
+    padding: 0 1rem;
+  ">
+    <div style="
+      background: rgba(255,255,255,0.15);
+      padding:0.8rem 1rem;
+      border-radius:12px;
+      box-shadow:0 6px 12px rgba(0,0,0,0.25);
+      min-width:60px;
+      text-align:center;
+    ">
+      <span id="days2" style="font-size:1.5rem; font-weight:700;">00</span>
+      <p style="margin:0; font-size:0.7rem;">Days</p>
     </div>
-      <!-- Color Palette Section -->
-    <div class="row mt-0 justify-content-center">
-      <div class="col-md-10 text-center">
-        <div class="d-flex justify-content-center"
-             style="gap:50px;">
-          
-          <div style="text-align:center;">
-            <div style="
-              width:60px; height:60px;
-              background-color:#98C0D9;
-              border-radius:8px;
-              border:1px solid #ccc;">
-            </div>
-            <small>Dusty Blue</small>
-          </div>
-
-          <div style="text-align:center;">
-            <div style="
-              width:60px; height:60px;
-              background-color:#6B8DAF;
-              border-radius:8px;
-              border:1px solid #ccc;">
-            </div>
-            <small>Slate Blue</small>
-          </div>
-
-          <div style="text-align:center;">
-            <div style="
-              width:60px; height:60px;
-              background-color:#03254C;
-              border-radius:8px;
-              border:1px solid #ccc;">
-            </div>
-            <small>Navy Blue</small>
-          </div>
-        </div>
-      </div>
+    <div style="
+      background: rgba(255,255,255,0.15);
+      padding:0.8rem 1rem;
+      border-radius:12px;
+      box-shadow:0 6px 12px rgba(0,0,0,0.25);
+      min-width:60px;
+      text-align:center;
+    ">
+      <span id="hours2" style="font-size:1.5rem; font-weight:700;">00</span>
+      <p style="margin:0; font-size:0.7rem;">Hrs</p>
     </div>
-
-  	<div class="container">
-    		<div class="row no-gutters">
-          <!-- Principal Sponsor -->
-    			<div class="col-md-6 col-lg-6 ftco-animate">
-            <div class="d-flex justify-content-center align-items-center">
-             <h3>Principal Sponsors</h3>
-            </div>
-    				<div class="project p-2">
-	    				<img src="images/weddingprincipal.png" class="img-fluid" alt="Colorlib Template">
-	    				<div class="text">
-	    					<span>Dress Code For:</span>
-	    					<h3>Principal Sponsors</h3>
-	    				</div>
-	    				<a href="images/weddingprincipal.png" class="icon image-popup d-flex justify-content-center align-items-center">
-	    					<span class="icon-expand"></span>
-	    				</a>
-    				</div>
-    			</div>
-          <!-- Guest -->
-    			<div class="col-md-6 col-lg-6 ftco-animate">
-            <div class="d-flex justify-content-center align-items-center">
-              <h3>Guest</h3>
-            </div>
-    				<div class="project p-2">
-	    				<img src="images/weddingguest.png" class="img-fluid" alt="Colorlib Template">
-	    				<div class="text">
-	    					<span>Dress Code For:</span>
-	    					<h3>Guests</h3>
-	    				</div>
-	    				<a href="images/weddingguest.png" class="icon image-popup d-flex justify-content-center align-items-center">
-	    					<span class="icon-expand"></span>
-	    				</a>
-    				</div>
-    			</div>
-    		</div>
+    <div style="
+      background: rgba(255,255,255,0.15);
+      padding:0.8rem 1rem;
+      border-radius:12px;
+      box-shadow:0 6px 12px rgba(0,0,0,0.25);
+      min-width:60px;
+      text-align:center;
+    ">
+      <span id="minutes2" style="font-size:1.5rem; font-weight:700;">00</span>
+      <p style="margin:0; font-size:0.7rem;">Mins</p>
     </div>
-
-    <div class="row mt-3 justify-content-center p-4">
-          <div class="row justify-content-start mb-5 pb-2">
-            <div class="col-md-4 heading-section ftco-animate">
-              <span class="subheading subheading-with-line"><small class="pr-2 bg-white"></small></span>
-              <h2 class="mb-4">Wedding Gift Guide</h2>
-            </div>
-            <div class="col-md-8 pl-md-5 heading-section ftco-animate">
-              <div class="pl-md-4 border-line">
-                <p>Your presence at our wedding is the greatest gift of all. 💛
-                    As love is what the day is all about, your presence is already the greatest gift, but if you'd like to give something 
-                    believing that a gift is worth giving, a <strong style="color: #1E3A8A;">MONETARY GIFT</strong> is preferred. This will help us start our new journey together in the most meaningful way.
-
-                </p>
-
-                <p class="mb-0">No pressure—your love, support, and presence are what we cherish most. 🤍</p>
-              </div>
-            </div>
-          </div>
-
-    </div>
-
-       <div class="row mt-3 justify-content-center p-4">
-          <div class="row justify-content-start mb-5 pb-2">
-            <div class="col-md-4 heading-section ftco-animate">
-              <span class="subheading subheading-with-line"><small class="pr-2 bg-white"></small></span>
-              <h2 class="mb-4">Snap and Share</h2>
-            </div>
-            <div class="col-md-8 pl-md-5 heading-section ftco-animate">
-              <div class="pl-md-4 border-line">
-                <p>
-                  You may capture and share your favorite moments during our wedding day. Don't 
-                  forget to tag us! Your photos will add to the memories we cherish.
-                </p>
-              </div>
-            </div>
-          </div>
-
+    <div style="
+      background: rgba(255,255,255,0.15);
+      padding:0.8rem 1rem;
+      border-radius:12px;
+      box-shadow:0 6px 12px rgba(0,0,0,0.25);
+      min-width:60px;
+      text-align:center;
+    ">
+      <span id="seconds2" style="font-size:1.5rem; font-weight:700;">00</span>
+      <p style="margin:0; font-size:0.7rem;">Sec</p>
     </div>
   </div>
 </section>
 
-<section id="Gallery" class="ftco-section ftco-no-pb" >
-  <div class="container-wrap">
-    <div class="row justify-content-center mb-5 pb-3">
-      <div class="col-md-7 heading-section ftco-animate text-center">
-        <span class="subheading subheading-with-line"><small class="pr-2">The</small></span>
-        <h2 class="mb-4 pageTitle">Gallery</h2>
-      </div>
-    </div>
-
-    <div class="row no-gutters">
-      <div class="col-6 col-sm-6 col-md-6 col-lg-3 ftco-animate">
-        <div class="project">
-          <img src="images/JUL01449.jpg" class="img-fluid" alt="Colorlib Template" style="height: 100% !important; width: 100%;">
-          <div class="text">
-            <span>Gallery</span>
-            <h3>C&J Wedding</h3>
-          </div>
-          <a href="images/JUL01449.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-            <span class="icon-expand"></span>
-          </a>
-        </div>
-      </div>
-      <div class="col-6 col-sm-6 col-md-6 col-lg-3 ftco-animate">
-        <div class="project">
-          <img src="images/JUL01502.jpg" class="img-fluid" alt="Colorlib Template">
-          <div class="text">
-            <span>Gallery</span>
-            <h3>C&J Wedding</h3>
-          </div>
-          <a href="images/JUL01502.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-            <span class="icon-expand"></span>
-          </a>
-        </div>
-      </div>
-      <div class="col-6 col-sm-6 col-md-6 col-lg-3 ftco-animate">
-        <div class="project">
-          <img src="images/JUL01436.jpg" class="img-fluid" alt="Colorlib Template">
-          <div class="text">
-           <span>Gallery</span>
-            <h3>C&J Wedding</h3>
-          </div>
-          <a href="images/JUL01436.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-            <span class="icon-expand"></span>
-          </a>
-        </div>
-      </div>
-      <div class="col-6 col-sm-6 col-md-6 col-lg-3 ftco-animate">
-        <div class="project">
-          <img src="images/JUL01463.jpg" class="img-fluid" alt="Colorlib Template">
-          <div class="text">
-             <span>Gallery</span>
-            <h3>C&J Wedding</h3>
-          </div>
-          <a href="images/JUL01463.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-            <span class="icon-expand"></span>
-          </a>
-        </div>
-      </div>
-      <div class="col-6 col-sm-6 col-md-6 col-lg-3 ftco-animate">
-        <div class="project">
-          <img src="images/JUL01455.jpg" class="img-fluid" alt="Colorlib Template">
-          <div class="text">
-             <span>Gallery</span>
-            <h3>C&J Wedding</h3>
-          </div>
-          <a href="images/JUL01455.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-            <span class="icon-expand"></span>
-          </a>
-        </div>
-      </div>
-      <div class="col-6 col-sm-6 col-md-6 col-lg-3 ftco-animate">
-        <div class="project">
-          <img src="images/JUL01438.jpg" class="img-fluid" alt="Colorlib Template">
-          <div class="text">
-            <span>Gallery</span>
-            <h3>C&J Wedding</h3>
-          </div>
-          <a href="images/JUL01438.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-            <span class="icon-expand"></span>
-          </a>
-        </div>
-      </div>
-      <div class="col-6 col-sm-6 col-md-6 col-lg-3 ftco-animate">
-        <div class="project">
-          <img src="images/JUL01483.jpg" class="img-fluid" alt="Colorlib Template">
-          <div class="text">
-             <span>Gallery</span>
-            <h3>C&J Wedding</h3>
-          </div>
-          <a href="images/JUL01483.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-            <span class="icon-expand"></span>
-          </a>
-        </div>
-      </div>
-      <div class="col-6 col-sm-6 col-md-6 col-lg-3 ftco-animate">
-        <div class="project">
-          <img src="images/Jul01444.jpg" class="img-fluid" alt="Colorlib Template">
-          <div class="text">
-            <span>Gallery</span>
-            <h3>C&J Wedding</h3>
-          </div>
-          <a href="images/Jul01444.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-            <span class="icon-expand"></span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="masterofCeremony" class="ftco-section ftco-no-pb position-relative masterofCeremonyPic">
-  <div class="container pb-4">
- <div class="row no-gutters align-items-center mb-4">
-    <div class="col-md-12 heading-section text-center">
-        <h2 class="mb-4 pageTitle" style="color: white;">Master of Ceremonies</h2>
-    </div>
-
-    <div class="col-md-12 d-flex flex-column align-items-center text-center ftco-animate">
-        <img src="images/dik2png.png"
-             class="img-fluid mb-3"
-             alt="Master of Ceremonies"
-             style="max-width: 30%; height: auto;">
-
-        <h1 class="" style="color: white;">
-            Gerald Jade P. Dequito <span style="font-size: 60%; color: white;">(Dik2x)</span>
-        </h1>
-    </div>
-</div>
-
-  </div>
-</section>
-
- <section class="ftco-section testimony-section bg-light" id="faq">
+    <section id="" class="ftco-section">
       <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-md-7 heading-section ftco-animate">
-          	<span class="subheading subheading-with-line"><small class="pr-2 bg-light">The</small></span>
-            <h2 class="mb-4">FAQ</h2>
-          </div>
-        </div>
-        <div class="row ftco-animate">
-          <div class="col-md-12">
-            <div class="carousel-testimony owl-carousel">
-              <div class="item">
-                <div class="testimony-wrap">
-                  <div class="text">
-                    <h5 class="mb-3 pl-4 line">Can I bring a plus-one or another guest?</h5>
-                      <span>
-                       To keep our celebration intimate and meaningful,
-                        our invitation is reserved exclusively for the guest(s) named.
-                        We kindly ask for your understanding that we are unable to accommodate additional guests.
-                    </span>
-                     <br>
-                    <i>Thank you for celebrating this special day with us 🤍</i>
-                  </div>
-                </div>
+
+        <div class="row no-gutters align-items-center">
+          <div class="col-12 imgbridegroom">
+            <div class="row">
+              <!-- First column -->
+              <div class="col-12 col-md-6 d-flex justify-content-center mb-4 mb-md-0">
+                <img src="images/JUL01493.jpg" alt="Bride and Groom" class="img-fluid" style="max-height: 40rem;">
               </div>
-              <div class="item">
-                <div class="testimony-wrap">
-                  <div class="text">
-                    <h5 class="mb-3 pl-4 line">Is there a dress code?</h5>
-                    <span>
-                      We kindly encourage guests to wear semi formal attire 
-                      and in shade of our color palette to complement our wedding theme.
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimony-wrap">
-                  <div class="text">
-                    <h5 class="mb-3 pl-4 line">What gift should we bring?</h5>
-                    <span>Your presence is truly the greatest gift we could ask for.
-                          However, if you wish to bless us with something more, a <strong style="color: #1E3A8A;">MONETARY GIFT</strong> will be deeply  appreciated
-                          will to help us start our life together as a family.”
-                    </span>
-                    <br>
-                    <i>Please know that your love and support mean the world to us.</i>
-                  </div>
-                </div>
+              <!-- Second column -->
+              <div class="col-12 col-md-6 d-flex justify-content-center">
+                <img src="images/dateBig.png" alt="Calendar" class="img-fluid" style="max-height: 40rem;">
               </div>
             </div>
           </div>
@@ -1139,21 +585,640 @@ img {
       </div>
     </section>
 
-<footer class="ftco-footer ftco-bg-dark ftco-section">
+    <!-- ================= COUPLE ================= -->
+    <section id="ourstory" class="ftco-section">
+      <div class="container">
+    <hr>
+        <div class="row no-gutters align-items-center">
+          <div class="col-md-7 wrap-about order-md-1 order-1">
+        <div class="container">
+          <div class="row justify-content-center">
+              <div class="col-md-8 heading-section ftco-animate text-center ourstory">
+                  <h1 class="mb-4 pageTitle">Our Story</h1>
+                  <div class="pl-md-4 border-line">
+                      <p class="ourstory">
+                          We first met as classmates in <strong>Tacurong National High School</strong>, 
+                          but it was during our <strong>4th year</strong> that something truly special began to bloom between us. 
+                          From classmates to friends, and then to a couple, we started a journey together that would last <strong>13 amazing years</strong>.
+                      </p>
+
+                      <p  class="ourstory">
+                          Through all the laughter, challenges, and countless adventures, our love only grew stronger. 
+                          We cheered each other on, supported each other’s dreams, and found comfort knowing we could always count on one another.
+                      </p>
+
+                      <p class="ourstory">
+                          Today, we are overjoyed to start a new chapter — one filled with love, commitment, and the promise of a lifetime together. 
+                          What began as friendship in high school has blossomed into a love story that we are proud to share with all of you.
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+          </div>
+
+          <div class="col-md-5 imgbridegroom order-md-2 order-2"
+              style="background-image:url(images/picAA.png);
+              background-size:contain;
+              background-repeat:no-repeat;
+              background-position:center;
+              min-height:40rem;">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+<section id="Church" style="background:#ffffff;font-family:'Poppins', sans-serif; color:#333;" class="p-4">
+
   <div class="container text-center">
-    <p>
-      © <script>document.write(new Date().getFullYear());</script>
-      Christian & Judy Ann
+
+    <!-- Ceremony -->
+    <div class="section-header mb-5">
+      <span class="subheading" style="font-size:0.9rem; letter-spacing:1px; color:#7B8FA1;">The</span>
+        <h1 class="mb-4 pageTitle">Ceremony</h1>
+    </div>
+
+    <h3 style="font-size:1.5rem; margin-bottom:0.5rem; color:#34495E;">Nuestra Señora de la Candelaria Parish</h3>
+    <p style="font-size:1rem; color:#555; margin-bottom:2rem;">
+      <strong>Location:</strong> Lapu-Lapu street, Tacurong City, Philippines
     </p>
-    <span>Two hearts • One promise • Forever</span>
+
+    <div class="row justify-content-center align-items-stretch g-4">
+      <!-- Image -->
+      <div class="col-12 col-md-6">
+        <div style="background:#fff; border-radius:15px; overflow:hidden; box-shadow:0 6px 20px rgba(0,0,0,0.1); height:100%;">
+          <img src="images/nuestrafront.jpg" alt="Ceremony Church" style="width:100%; height:100%; object-fit:cover;">
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="col-12 col-md-6">
+        <div style="background:#fff; border-radius:15px; overflow:hidden; box-shadow:0 6px 20px rgba(0,0,0,0.1); height:100%;">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.12345!2d124.673069!3d6.6879213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32f80d431f08d3b3%3A0x3b02439e76924eb3!2sNuestra+Se%C3%B1ora+de+la+Candelaria+Parish+Church!5e0!3m2!1sen!2sph!4v1600000000000" 
+            style="width:100%; height:100%; min-height:350px; border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reception -->
+    <div class="section-header mt-5 mb-4">
+      <span class="subheading" style="font-size:0.9rem; letter-spacing:1px; color:#7B8FA1;">The</span>
+              <h1 class="mb-4 pageTitle">Reception</h1>
+    </div>
+
+    <h3 style="font-size:1.5rem; margin-bottom:0.5rem; color:#34495E;">Take Off Place</h3>
+    <p style="font-size:1rem; color:#555; margin-bottom:2rem;">
+      <strong>Location:</strong> Brgy. Buenaflor, Tacurong City, Philippines
+    </p>
+
+    <div class="row justify-content-center align-items-stretch g-4">
+      <!-- Image -->
+      <div class="col-12 col-md-6">
+        <div style="background:#fff; border-radius:15px; overflow:hidden; box-shadow:0 6px 20px rgba(0,0,0,0.1); height:100%;">
+          <img src="images/takeoffPlace.jpg" alt="Reception Venue" style="width:100%; height:100%; object-fit:cover; min-height:350px;">
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="col-12 col-md-6">
+        <div style="background:#fff; border-radius:15px; overflow:hidden; box-shadow:0 6px 20px rgba(0,0,0,0.1); height:100%;">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1896.136074400204!2d124.65758865555438!3d6.704063531261458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32f80de81dbc8be5%3A0x5cc7aa00bac77a28!2sTake%20Off%20Place!5e1!3m2!1sen!2sph!4v1769521962730!5m2!1sen!2sph" 
+            style="width:100%; height:100%; min-height:350px; border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+
   </div>
-</footer>
+</section>
+
+
+ <section id="entourage" class="ftco-section entourage-bg" style="background: linear-gradient(135deg, rgba(44,62,80,0.85), rgba(74,109,140,0.85)); color: #fff; font-family: 'Poppins', sans-serif; padding: 5rem 1rem;">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-7 heading-section ftco-animate text-center">
+            <span class="subheading">
+              <small class="pr-2" style="color: white;">The</small>
+          </span>
+            <h1 class="mb-4 pageTitle" style="color: white;">Entourage</h1>
+          </div>
+        </div>
+
+        <!-- Parents of Groom & Bride -->
+        <div class="row justify-content-center mb-4 text-center">
+          <div class="col-md-6">
+            <h5 class="mb-2 entourageTitle">Parents of the Groom</h5>
+            <p class="entourageNames"class="entourageNames">Mrs. Rosemarie L. Bade</p>
+          </div>
+          <div class="col-md-6">
+            <h5 class="mb-2 entourageTitle">Parents of the Bride</h5>
+              <ul class="list-unstyled">
+                <li class="entourageNames">Mr. Jose Poe M. Galanida</li>
+                <li class="entourageNames">Mrs. Arlyn A. Galanida</li>
+              </ul>
+          </div>
+        </div>
+
+        <!-- Principal Sponsors -->
+        <div class="row justify-content-center mb-4 text-center">
+          <div class="col-md-12">
+            <h5 class="mb-2 entourageTitle">Principal Sponsors</h5>
+              <ul class="list-unstyled">
+                <li class="entourageNames">Mr. Edwin G. Mosqueda</li>
+                <li class="entourageNames">Mrs. Nena H. Mosqueda</li>
+                <li class="entourageNames">Mr. Ian C. Besañes</li>
+                <li class="entourageNames">Mrs. Chyl F. Besañes</li>
+                <li class="entourageNames">Mrs. Mary Ann Bañas</li>
+                <li class="entourageNames">Mrs. Catherine B. Antonino</li>
+                <li class="entourageNames">Mrs. Ailen Asodisen</li>
+                <li class="entourageNames">Mrs. Nelia Duque</li>
+                <li class="entourageNames">Mr. Joel Demorito</li>
+                <li class="entourageNames">Mrs. Norigen Diesto</li>
+                <li class="entourageNames">Mr. Eufemio Galimba</li>
+                <li class="entourageNames">Mrs. Maribel B. Galimba</li>
+                <li class="entourageNames">Mr. Alberto G. Calise</li>
+                <li class="entourageNames">Mrs. Helen M. Calise</li>
+              </ul>
+          </div>
+        </div>
+
+        <!-- Best Man & Maid of Honor -->
+        <div class="row justify-content-center mb-4 text-center">
+          <div class="col-md-6">
+            <h5 class="mb-2 entourageTitle">Best Man</h5>
+            <p class="entourageNames">Mr. Rolenber L. Bade</p>
+          </div>
+          <div class="col-md-6">
+            <h5 class="mb-2 entourageTitle">Maid of Honor</h5>
+            <p class="entourageNames">Ms. Pauline Jane A. Galanida</p>
+          </div>
+        </div>
+
+        <!-- Groomsmen & Bridesmaids -->
+        <div class="row justify-content-center mb-4 text-center">
+          <div class="col-md-6">
+            <h5 class="mb-2 entourageTitle">Groomsmen</h5>
+              <ul class="list-unstyled">
+                <li class="entourageNames">Mr. Kenneth Mark Bade</li>
+                <li class="entourageNames">Mr. Karl Marwin Bade</li>
+                <li class="entourageNames">Mr. Jude Belgira</li>
+                <li class="entourageNames">Mr. Janfred A. Deniega</li>
+                <li class="entourageNames">Mr. Justin B. Sinoy</li>
+              </ul>
+          </div>
+          <div class="col-md-6">
+            <h5 class="mb-2 entourageTitle">Bridesmaids</h5>
+              <ul class="list-unstyled">
+                <li class="entourageNames">Ms. Krisha Ann B. Cristobas</li>
+                <li class="entourageNames">Ms. Lerien Rose L. Bade</li>
+                <li class="entourageNames">Ms. Swellen Sareno</li>
+                <li class="entourageNames">Ms. Princess Angel Arcena</li>
+                <li class="entourageNames">Ms. Erich Jay Borres</li>
+              </ul>
+          </div>
+        </div>
+
+        <!-- Candle, Veil & Cord Sponsors -->
+        <div class="row justify-content-center mb-4 text-center">
+          <div class="col-md-4">
+            <h5 class="mb-2 entourageTitle">Candle Sponsors</h5>
+              <ul class="list-unstyled">
+                <li class="entourageNames">Mr. Mhel Toquirre</li>
+                <li class="entourageNames">Ms. Ellen Rose L. Bade</li>
+              </ul>
+          </div>
+          <div class="col-md-4">
+            <h5 class="mb-2 entourageTitle">Veil Sponsors</h5>
+              <ul class="list-unstyled">
+                <li class="entourageNames">Mr. Jerry Cristobas</li>
+                <li class="entourageNames">Mrs. Jocelyn B. Cristobas</li>
+              </ul>
+          </div>
+          <div class="col-md-4">
+            <h5 class="mb-2 entourageTitle">Cord Sponsors</h5>
+              <ul class="list-unstyled">
+                <li class="entourageNames">Mr. Cesar T. Salloman Jr.</li>
+                <li class="entourageNames">Mrs. Michelle T. Salloman</li>
+              </ul>
+          </div>
+        </div>
+
+        <!-- Ring, Bible & Coin Bearers -->
+        <div class="row justify-content-center mb-4 text-center">
+          <div class="col-md-4">
+            <h5 class="mb-2 entourageTitle">Ring Bearer</h5>
+            <p class="entourageNames">Prince Gelo Arcena</p>
+          </div>
+          <div class="col-md-4">
+            <h5 class="mb-2 entourageTitle">Bible Bearer</h5>
+            <p class="entourageNames">Jhandy D. Burcag</p>
+          </div>
+          <div class="col-md-4">
+            <h5 class="mb-2 entourageTitle">Coin Bearer</h5>
+            <p class="entourageNames">Kin Jiro A. Deniega</p>
+          </div>
+        </div>
+
+        <!-- Flower Girls -->
+        <div class="row justify-content-center mb-4 text-center">
+          <div class="col-md-12">
+            <h5 class="mb-2 entourageTitle">Flower Girls</h5>
+                <ul class="list-unstyled">
+                <li class="entourageNames">Samantha Faye Genandoy</li>
+                <li class="entourageNames">Charmaine B. Antonino</li>
+                <li class="entourageNames">Charlotte B. Antonino</li>
+                <li class="entourageNames">Jerillen B. Acosta</li>
+              </ul>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+<!-- ================= DRESS CODE ================= -->
+<section id="dressCode" class="ftco-section ftco-no-pb position-relative" style="font-family: 'Poppins', sans-serif; background: #F8F9FA; color:#1E3A8A;">
+
+  <div class="container">
+
+    <!-- Dress Code Title -->
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-7 text-center">
+        <span class="subheading subheading-with-line">
+          <small class="pr-2 bg-white" style="font-weight:500;">Dress Code</small>
+        </span>
+        <h2 class="mb-3" style="font-weight:600;">What to Wear?</h2>
+        <p class="mb-1">
+          We would be delighted if you would join us in celebrating by wearing semi-formal attire.
+        </p>
+        <p>
+          We also highly encourage you to dress in the shades of our color palette.
+        </p>
+      </div>
+    </div>
+
+    <!-- Color Palette -->
+<!-- Color Palette -->
+<div class="row justify-content-center mb-5">
+  <div class="col-md-10 text-center d-flex flex-wrap justify-content-center" style="gap:2rem;">
     
-  
-<!-- Floating RSVP Button -->
-<button id="rsvpFloatingBtn" class="rsvp-float-btn" data-toggle="modal" data-target="#rsvpModal">
-  <i class="fas fa-envelope"></i> RSVP
-</button>
+    <div style="text-align:center;">
+      <div style="width:70px; height:70px; background-color:#98C0D9; border-radius:12px; border:1px solid #ccc; margin:auto;"></div>
+      <small style="display:block; margin-top:0.5rem;">Dusty Blue</small>
+    </div>
+
+    <div style="text-align:center;">
+      <div style="width:70px; height:70px; background-color:#6B8DAF; border-radius:12px; border:1px solid #ccc; margin:auto;"></div>
+      <small style="display:block; margin-top:0.5rem;">Slate Blue</small>
+    </div>
+
+    <div style="text-align:center;">
+      <div style="width:70px; height:70px; background-color:#03254C; border-radius:12px; border:1px solid #ccc; margin:auto;"></div>
+      <small style="display:block; margin-top:0.5rem;">Navy Blue</small>
+    </div>
+
+  </div>
+</div>
+
+
+    <!-- Dress Code Images -->
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-6 mb-4 text-center">
+        <h3 class="mb-3">Principal Sponsors</h3>
+        <img src="images/weddingprincipal.png" alt="Principal Sponsors" class="img-fluid rounded" style="max-height: 300px; object-fit: cover; margin:auto;">
+        <p class="mt-2 mb-0">Dress Code For Principal Sponsors</p>
+      </div>
+      <div class="col-md-6 mb-4 text-center">
+        <h3 class="mb-3">Guests</h3>
+        <img src="images/weddingguest.png" alt="Guests" class="img-fluid rounded" style="max-height: 300px; object-fit: cover; margin:auto;">
+        <p class="mt-2 mb-0">Dress Code For Guests</p>
+      </div>
+    </div>
+
+    <!-- Wedding Gift Guide -->
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-4 mb-3">
+        <h2 class="mb-3">Wedding Gift Guide</h2>
+      </div>
+      <div class="col-md-8">
+        <p>
+          Your presence at our wedding is the greatest gift of all. 💛
+          If you'd like to give a gift, a <strong style="color: #1E3A8A;">monetary gift</strong> is preferred to help us start our new journey together.
+        </p>
+        <p class="mb-0">No pressure—your love, support, and presence are what we cherish most. 🤍</p>
+      </div>
+    </div>
+
+    <!-- Snap and Share -->
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-4 mb-3">
+        <h2 class="mb-3">Snap and Share</h2>
+      </div>
+      <div class="col-md-8">
+        <p>
+          Capture and share your favorite moments during our wedding day. Don't forget to tag us! Your photos will add to the memories we cherish.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+    <section id="Gallery" class="ftco-section ftco-no-pb" >
+      <div class="container-wrap">
+        <div class="row justify-content-center">
+          <div class="col-md-7 heading-section ftco-animate text-center">
+            <span class="subheading subheading-with-line"><small class="pr-2">The</small></span>
+            <h1 class="mb-4 pageTitle">Gallery</h1>
+          </div>
+        </div>
+
+        <div class="row no-gutters">
+          <div class="col-6 col-sm-6 col-md-6 col-lg-3 ftco-animate">
+            <div class="project">
+              <img src="images/JUL01449.jpg" class="img-fluid" alt="Colorlib Template" style="height: 100% !important; width: 100%;">
+              <div class="text">
+                <span>Gallery</span>
+                <h3>C&J Wedding</h3>
+              </div>
+              <a href="images/JUL01449.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+                <span class="icon-expand"></span>
+              </a>
+            </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-3 ftco-animate">
+            <div class="project">
+              <img src="images/JUL01502.jpg" class="img-fluid" alt="Colorlib Template">
+              <div class="text">
+                <span>Gallery</span>
+                <h3>C&J Wedding</h3>
+              </div>
+              <a href="images/JUL01502.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+                <span class="icon-expand"></span>
+              </a>
+            </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-3 ftco-animate">
+            <div class="project">
+              <img src="images/JUL01436.jpg" class="img-fluid" alt="Colorlib Template">
+              <div class="text">
+              <span>Gallery</span>
+                <h3>C&J Wedding</h3>
+              </div>
+              <a href="images/JUL01436.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+                <span class="icon-expand"></span>
+              </a>
+            </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-3 ftco-animate">
+            <div class="project">
+              <img src="images/JUL01463.jpg" class="img-fluid" alt="Colorlib Template">
+              <div class="text">
+                <span>Gallery</span>
+                <h3>C&J Wedding</h3>
+              </div>
+              <a href="images/JUL01463.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+                <span class="icon-expand"></span>
+              </a>
+            </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-3 ftco-animate">
+            <div class="project">
+              <img src="images/JUL01455.jpg" class="img-fluid" alt="Colorlib Template">
+              <div class="text">
+                <span>Gallery</span>
+                <h3>C&J Wedding</h3>
+              </div>
+              <a href="images/JUL01455.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+                <span class="icon-expand"></span>
+              </a>
+            </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-3 ftco-animate">
+            <div class="project">
+              <img src="images/JUL01438.jpg" class="img-fluid" alt="Colorlib Template">
+              <div class="text">
+                <span>Gallery</span>
+                <h3>C&J Wedding</h3>
+              </div>
+              <a href="images/JUL01438.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+                <span class="icon-expand"></span>
+              </a>
+            </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-3 ftco-animate">
+            <div class="project">
+              <img src="images/JUL01483.jpg" class="img-fluid" alt="Colorlib Template">
+              <div class="text">
+                <span>Gallery</span>
+                <h3>C&J Wedding</h3>
+              </div>
+              <a href="images/JUL01483.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+                <span class="icon-expand"></span>
+              </a>
+            </div>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-3 ftco-animate">
+            <div class="project">
+              <img src="images/Jul01444.jpg" class="img-fluid" alt="Colorlib Template">
+              <div class="text">
+                <span>Gallery</span>
+                <h3>C&J Wedding</h3>
+              </div>
+              <a href="images/Jul01444.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+                <span class="icon-expand"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+<section id="weddingTeam" style="
+  background: linear-gradient(180deg, rgba(11,37,69,0.8), rgba(74,111,165,0.8)), url('images/dustyFloral.png') center/cover no-repeat;
+  padding: 6rem 1rem;
+  font-family: 'Playfair Display', serif;
+  color: #fff;
+">
+
+  <div class="container text-center">
+    <!-- Section Title -->
+    <h2 style="
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: #E0EFFF;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+      margin-bottom: 1rem;
+    ">Our Wedding Team</h2>
+    <p style="
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 3rem auto;
+      color: #D3E4F0;
+      opacity: 0.95;
+    ">
+      Bringing charm, elegance, and unforgettable moments to our special day
+    </p>
+
+    <!-- Team Cards -->
+    <div style="
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 3rem;
+    ">
+
+      <!-- Master of Ceremonies -->
+      <div class="team-card" style="
+        width: 320px; /* increased width */
+        background: rgba(255,255,255,0.05);
+        padding: 2rem 1.5rem;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      ">
+        <div class="team-photo" style="
+          width: 180px;
+          height: 180px;
+          border-radius: 50%;
+          overflow: hidden;
+          margin: 0 auto 1rem auto;
+          box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+        ">
+          <img src="images/dik2png.png" alt="Master of Ceremonies" style="width:100%; height:100%; object-fit:cover;">
+        </div>
+        <h3 style="font-family: 'Great Vibes', cursive; color:#E0EFFF; margin-bottom:0.2rem;">Gerald Jade P. Dequito</h3>
+        <span style="font-size: 0.85rem; color:#B0C4DE;">(Dik2x)</span>
+        <p style="font-family: 'Poppins', sans-serif; color:#fff; line-height:1.5; margin-top:1rem;">
+          Guiding our wedding day with charm, grace, and laughter. Gerald brings energy, professionalism, and warmth to every moment.
+        </p>
+        <a href="mailto:contact@geraldmc.com" class="btn-team" style="
+          display:inline-block;
+          margin-top:1rem;
+          padding:0.5rem 1.2rem;
+          background-color:#4a6fa5;
+          color:#fff;
+          border-radius:8px;
+          text-decoration:none;
+          font-family:'Poppins', sans-serif;
+        ">Book Now</a>
+      </div>
+
+      <!-- Wedding Decorator -->
+      <div class="team-card" style="
+        width: 320px; /* increased width */
+        background: rgba(255,255,255,0.05);
+        padding: 2rem 1.5rem;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      ">
+        <div class="team-photo" style="
+          width: 180px;
+          height: 180px;
+          border-radius: 50%;
+          overflow: hidden;
+          margin: 0 auto 1rem auto;
+          box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+        ">
+          <img src="images/floralA.png" alt="Wedding Decorator" style="width:100%; height:100%; object-fit:cover;">
+        </div>
+        <h3 style="font-family: 'Great Vibes', cursive; color:#E0EFFF; margin-bottom:0.2rem;">Elegant Weddings</h3>
+        <span style="font-size: 0.85rem; color:#B0C4DE;">(Decorator)</span>
+        <p style="font-family: 'Poppins', sans-serif; color:#fff; line-height:1.5; margin-top:1rem;">
+          Creating stunning wedding designs with navy, dusty, and slate blue elegance. Transforming venues into breathtaking memories.
+        </p>
+        <a href="mailto:contact@elegantweddings.com" class="btn-team" style="
+          display:inline-block;
+          margin-top:1rem;
+          padding:0.5rem 1.2rem;
+          background-color:#4a6fa5;
+          color:#fff;
+          border-radius:8px;
+          text-decoration:none;
+          font-family:'Poppins', sans-serif;
+        ">Contact Us</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+    <section class="ftco-section testimony-section bg-light" id="faq">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-md-7 heading-section ftco-animate">
+                <span class="subheading subheading-with-line"><small class="pr-2 bg-light">The</small></span>
+                <h2 class="mb-4">FAQ</h2>
+              </div>
+            </div>
+            <div class="row ftco-animate">
+              <div class="col-md-12">
+                <div class="carousel-testimony owl-carousel">
+                  <div class="item">
+                    <div class="testimony-wrap">
+                      <div class="text">
+                        <h5 class="mb-3 pl-4 line">Can I bring a plus-one or another guest?</h5>
+                          <span>
+                          To keep our celebration intimate and meaningful,
+                            our invitation is reserved exclusively for the guest(s) named.
+                            We kindly ask for your understanding that we are unable to accommodate additional guests.
+                        </span>
+                        <br>
+                        <i>Thank you for celebrating this special day with us 🤍</i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="testimony-wrap">
+                      <div class="text">
+                        <h5 class="mb-3 pl-4 line">Is there a dress code?</h5>
+                        <span>
+                          We kindly encourage guests to wear semi formal attire 
+                          and in shade of our color palette to complement our wedding theme.
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="testimony-wrap">
+                      <div class="text">
+                        <h5 class="mb-3 pl-4 line">What gift should we bring?</h5>
+                        <span>Your presence is truly the greatest gift we could ask for.
+                              However, if you wish to bless us with something more, a <strong style="color: #1E3A8A;">MONETARY GIFT</strong> will be deeply  appreciated
+                              will to help us start our life together as a family.”
+                        </span>
+                        <br>
+                        <i>Please know that your love and support mean the world to us.</i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+    <footer class="ftco-footer ftco-bg-dark ftco-section">
+      <div class="container text-center">
+        <p>
+          © <script>document.write(new Date().getFullYear());</script>
+          Christian & Judy Ann
+        </p>
+        <span>Two hearts • One promise • Forever</span>
+      </div>
+    </footer>
+        
+      
+    <!-- Floating RSVP Button -->
+    <button id="rsvpFloatingBtn" class="rsvp-float-btn" data-toggle="modal" data-target="#rsvpModal">
+      <i class="fas fa-envelope"></i> RSVP
+    </button>
+
+  </div>
 
 
 <!-- ================= RSVP MODAL ================= -->
@@ -1172,7 +1237,7 @@ img {
         <p style="font-size:16px;">
           We’re so excited to celebrate our wedding with you 💙<br><br>
           Please confirm whether you will be attending by filling out the form below<br>
-          on or before <strong>February 28, 2026</strong>.
+          on or before <strong>March 26, 2026</strong>.
         </p>
 
         <form id="rsvpForm"
@@ -1217,7 +1282,7 @@ img {
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 <audio id="bgMusic" loop>
-    <source src="music/WeAre.mp3" type="audio/mpeg">
+    <source src="music/YoureStill.mp3" type="audio/mpeg">
 </audio>
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
@@ -1234,13 +1299,27 @@ img {
   <script src="js/scrollax.min.js"></script>
   <script src="js/main.js"></script>
 <script>
-   const overlay = document.getElementById("startOverlay");
-    const audio = document.getElementById("bgMusic");
+ 
+const audio = document.getElementById("bgMusic");
+function openEnvelope() {
+  const overlay = document.getElementById("startOverlay");
+  overlay.classList.add("open");
 
-    overlay.addEventListener("click", function () {
-        audio.play();
-        overlay.style.display = "none";
-    });
+  // After animation (optional delay), hide overlay completely
+  setTimeout(() => {
+    overlay.classList.add("hide");
+    overlay.style.display = "none";
+
+    // Show invitation content
+    const invitation = document.getElementById("invitationDetails");
+    invitation.style.display = "block";
+
+    // Allow scrolling
+    document.body.style.overflow = "auto";
+    audio.play();
+  }, 1000); // 1 second delay to match flap animation
+}
+
 
 function handleRSVPSubmit() {
   const btn = document.getElementById("rsvpBtn");

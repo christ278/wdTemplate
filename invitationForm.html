@@ -315,6 +315,13 @@ img {
     margin-bottom: 1rem;
 }
 
+.cardtitleInvitation {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: #051c35;
+    margin-bottom: 1rem;
+}
+
 .entourageTitle{
    font-family: 'Great Vibes', cursive;
     font-size: clamp(2rem, 4vw, 3rem);
@@ -391,16 +398,31 @@ img {
         <div class="seal"></div>
       </div>
 
-      <div class="card" style="
-        display: flex;
-        justify-content: center;
-        align-items: center; 
-        padding: 1rem 0.8rem; 
-        font-family: 'Poppins', sans-serif; 
-        overflow: hidden; 
-        box-sizing: border-box;
+      <div class="card p-4" style="
+          display: flex;
+          justify-content: center;
+          align-items: center; 
+          padding: 2rem 2.5rem;
+          font-family: 'Poppins', sans-serif; 
+          background: #ffffff; 
+          border-radius: 20px;
+          box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+          overflow: hidden;
+          box-sizing: border-box;
+          max-width: 700px;
+          margin: 2.5rem auto;
       ">
-        <h1 class="mb-2 pageTitle">See You!</h1>
+          <h3 class="cardtitleInvitation" style="
+              text-align: center;  /* centered text */
+              width: 100%; 
+              color: #000000;
+              font-weight: 500;
+              font-size: clamp(1.5rem, 3vw, 2rem);
+              line-height: 1.8;
+              margin: 0;
+          ">
+              We can't wait to see you soon!
+          </h3>
       </div>
     </div>
 
@@ -502,6 +524,16 @@ img {
     ">
       <span style="font-size: clamp(1rem, 2.5vw, 1.2rem); font-weight:500; letter-spacing:0.5px;">March 26, 2026</span>
       <span style="font-size: clamp(0.8rem, 2vw, 1rem); font-weight:300; opacity:0.85;">Thursday</span>
+      <h3 style="
+        font-family: 'Great Vibes', cursive;
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        font-weight: 600;
+        opacity: 1;
+        color: #f3f8ff;
+        text-shadow: 1px 1px 4px rgba(48, 48, 48, 0.5);
+      ">
+        9:30am
+      </h3>
     </div>
 
   </div>
@@ -708,7 +740,10 @@ img {
         <div class="row justify-content-center mb-4 text-center">
           <div class="col-md-6">
             <h5 class="mb-2 entourageTitle">Parents of the Groom</h5>
-            <p class="entourageNames"class="entourageNames">Mrs. Rosemarie L. Bade</p>
+            <ul class="list-unstyled">
+                <li class="entourageNames">Mr. Darly M. Bade</li>
+                <li class="entourageNames">Mrs. Rosemarie L. Bade</li>
+              </ul>
           </div>
           <div class="col-md-6">
             <h5 class="mb-2 entourageTitle">Parents of the Bride</h5>
@@ -769,7 +804,7 @@ img {
           <div class="col-md-6">
             <h5 class="mb-2 entourageTitle">Bridesmaids</h5>
               <ul class="list-unstyled">
-                <li class="entourageNames">Ms. Krisha Ann B. Cristobas</li>
+                <li class="entourageNames">Ms. Krisha Anne B. Cristobas</li>
                 <li class="entourageNames">Ms. Lerien Rose L. Bade</li>
                 <li class="entourageNames">Ms. Swellen Sareno</li>
                 <li class="entourageNames">Ms. Princess Angel Arcena</li>
@@ -790,7 +825,7 @@ img {
           <div class="col-md-4">
             <h5 class="mb-2 entourageTitle">Veil Sponsors</h5>
               <ul class="list-unstyled">
-                <li class="entourageNames">Mr. Jerry Cristobas</li>
+                <li class="entourageNames">Mr. Jerry B. Cristobas</li>
                 <li class="entourageNames">Mrs. Jocelyn B. Cristobas</li>
               </ul>
           </div>
@@ -885,12 +920,10 @@ img {
       <div class="col-md-6 mb-4 text-center">
         <h3 class="mb-3">Principal Sponsors</h3>
         <img src="images/weddingprincipal.png" alt="Principal Sponsors" class="img-fluid rounded" style="max-height: 300px; object-fit: cover; margin:auto;">
-        <p class="mt-2 mb-0">Dress Code For Principal Sponsors</p>
       </div>
       <div class="col-md-6 mb-4 text-center">
         <h3 class="mb-3">Guests</h3>
         <img src="images/weddingguest.png" alt="Guests" class="img-fluid rounded" style="max-height: 300px; object-fit: cover; margin:auto;">
-        <p class="mt-2 mb-0">Dress Code For Guests</p>
       </div>
     </div>
 
@@ -1089,21 +1122,27 @@ img {
         ">
           <img src="images/dik2png.png" alt="Master of Ceremonies" style="width:100%; height:100%; object-fit:cover;">
         </div>
-        <h3 style="font-family: 'Great Vibes', cursive; color:#E0EFFF; margin-bottom:0.2rem;">Gerald Jade P. Dequito</h3>
-        <span style="font-size: 0.85rem; color:#B0C4DE;">(Dik2x)</span>
+        <h3 style="font-family: 'Great Vibes', cursive; color:#E0EFFF; margin-bottom:0.2rem;">Dik2x</h3>
+        <span style="font-size: 0.85rem; color:#B0C4DE;">(Master of Ceremony)</span>
         <p style="font-family: 'Poppins', sans-serif; color:#fff; line-height:1.5; margin-top:1rem;">
-          Guiding our wedding day with charm, grace, and laughter. Gerald brings energy, professionalism, and warmth to every moment.
+          Guiding our wedding day with charm, grace, and laughter. DIK2x brings energy, professionalism, and warmth to every moment.
         </p>
-        <a href="mailto:contact@geraldmc.com" class="btn-team" style="
-          display:inline-block;
-          margin-top:1rem;
-          padding:0.5rem 1.2rem;
-          background-color:#4a6fa5;
-          color:#fff;
-          border-radius:8px;
-          text-decoration:none;
-          font-family:'Poppins', sans-serif;
-        ">Book Now</a>
+        <a href="https://www.facebook.com/thedikshow"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-team"
+          style="
+              display:inline-block;
+              margin-top:1rem;
+              padding:0.5rem 1.2rem;
+              background-color:#4a6fa5;
+              color:#fff;
+              border-radius:8px;
+              text-decoration:none;
+              font-family:'Poppins', sans-serif;
+          ">
+          Book Now
+        </a>
       </div>
 
       <!-- Wedding Decorator -->
@@ -1122,25 +1161,72 @@ img {
           margin: 0 auto 1rem auto;
           box-shadow: 0 5px 15px rgba(0,0,0,0.4);
         ">
-          <img src="images/floralA.png" alt="Wedding Decorator" style="width:100%; height:100%; object-fit:cover;">
+          <img src="images/kjBallons.jpg" alt="Wedding Decorator" style="width:100%; height:100%; object-fit:cover;">
         </div>
-        <h3 style="font-family: 'Great Vibes', cursive; color:#E0EFFF; margin-bottom:0.2rem;">Elegant Weddings</h3>
-        <span style="font-size: 0.85rem; color:#B0C4DE;">(Decorator)</span>
+        <h3 style="font-family: 'Great Vibes', cursive; color:#E0EFFF; margin-bottom:0.2rem;">KJ's Balloon</h3>
+        <span style="font-size: 0.85rem; color:#B0C4DE;">(Decorator & Coodinator)</span>
         <p style="font-family: 'Poppins', sans-serif; color:#fff; line-height:1.5; margin-top:1rem;">
           Creating stunning wedding designs with navy, dusty, and slate blue elegance. Transforming venues into breathtaking memories.
         </p>
-        <a href="mailto:contact@elegantweddings.com" class="btn-team" style="
-          display:inline-block;
-          margin-top:1rem;
-          padding:0.5rem 1.2rem;
-          background-color:#4a6fa5;
-          color:#fff;
-          border-radius:8px;
-          text-decoration:none;
-          font-family:'Poppins', sans-serif;
-        ">Contact Us</a>
+        <a href="https://www.facebook.com/KJsBalloon2004"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-team"
+          style="
+              display:inline-block;
+              margin-top:1rem;
+              padding:0.5rem 1.2rem;
+              background-color:#4a6fa5;
+              color:#fff;
+              border-radius:8px;
+              text-decoration:none;
+              font-family:'Poppins', sans-serif;
+          ">
+          Contact Us
+        </a>
       </div>
 
+
+          <!-- Video and Photos By -->
+      <div class="team-card" style="
+        width: 320px; /* increased width */
+        background: rgba(255,255,255,0.05);
+        padding: 2rem 1.5rem;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      ">
+        <div class="team-photo" style="
+          width: 180px;
+          height: 180px;
+          border-radius: 50%;
+          overflow: hidden;
+          margin: 0 auto 1rem auto;
+          box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+        ">
+          <img src="images/photoVideo.jpg" alt="Photographer & Videographer" style="width:100%; height:100%; object-fit:cover;">
+        </div>
+        <h3 style="font-family: 'Great Vibes', cursive; color:#E0EFFF; margin-bottom:0.2rem;">Eli Garcia & Team</h3>
+        <span style="font-size: 0.85rem; color:#B0C4DE;">(Photographer & Videographer)</span>
+        <p style="font-family: 'Poppins', sans-serif; color:#fff; line-height:1.5; margin-top:1rem;">
+          Capturing timeless moments and telling our love story through stunning photos and cinematic films—preserving genuine emotions, beautiful details, and unforgettable memories of our special day.
+        </p>
+        <!-- <a href="https://www.facebook.com/thedikshow"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-team"
+          style="
+              display:inline-block;
+              margin-top:1rem;
+              padding:0.5rem 1.2rem;
+              background-color:#4a6fa5;
+              color:#fff;
+              border-radius:8px;
+              text-decoration:none;
+              font-family:'Poppins', sans-serif;
+          ">
+          Book Now
+        </a> -->
+      </div>
     </div>
   </div>
 </section>
@@ -1158,6 +1244,17 @@ img {
             <div class="row ftco-animate">
               <div class="col-md-12">
                 <div class="carousel-testimony owl-carousel">
+                   <div class="item">
+                    <div class="testimony-wrap">
+                      <div class="text">
+                        <h5 class="mb-3 pl-4 line">What time should we arrived?</h5>
+                        <span>
+                          We kindly request your presence at 9:30 to ensure a smooth start.
+                        </span>
+                        <br>
+                      </div>
+                    </div>
+                  </div>
                   <div class="item">
                     <div class="testimony-wrap">
                       <div class="text">
@@ -1168,7 +1265,6 @@ img {
                             We kindly ask for your understanding that we are unable to accommodate additional guests.
                         </span>
                         <br>
-                        <i>Thank you for celebrating this special day with us 🤍</i>
                       </div>
                     </div>
                   </div>
@@ -1177,7 +1273,7 @@ img {
                       <div class="text">
                         <h5 class="mb-3 pl-4 line">Is there a dress code?</h5>
                         <span>
-                          We kindly encourage guests to wear semi formal attire 
+                          We kindly encourage guests to wear semi-formal attire 
                           and in shade of our color palette to complement our wedding theme.
                         </span>
                       </div>
@@ -1188,14 +1284,24 @@ img {
                       <div class="text">
                         <h5 class="mb-3 pl-4 line">What gift should we bring?</h5>
                         <span>Your presence is truly the greatest gift we could ask for.
-                              However, if you wish to bless us with something more, a <strong style="color: #1E3A8A;">MONETARY GIFT</strong> will be deeply  appreciated
-                              will to help us start our life together as a family.”
+                              However, if you wish to bless us with something more, a <strong style="color: #1E3A8A;">MONETARY GIFT</strong> will be deeply appreciated.
                         </span>
                         <br>
-                        <i>Please know that your love and support mean the world to us.</i>
                       </div>
                     </div>
                   </div>
+                  <div class="item">
+                    <div class="testimony-wrap">
+                      <div class="text">
+                        <h5 class="mb-3 pl-4 line">How do we RSVP?</h5>
+                        <span>Kindly confirm your attendance by clicking the RSVP button on the right side of this invitation
+                           and completing all required details on or before March 15, 2026.
+                        </span>
+                        <br>
+                      </div>
+                    </div>
+                  </div>
+                 
                 </div>
               </div>
             </div>
@@ -1236,8 +1342,8 @@ img {
       <div class="modal-body">
         <p style="font-size:16px;">
           We’re so excited to celebrate our wedding with you 💙<br><br>
-          Please confirm whether you will be attending by filling out the form below<br>
-          on or before <strong>March 26, 2026</strong>.
+          Please confirm whether you will be attending by filling out the form below
+          on or before <strong>March 15, 2026</strong>.
         </p>
 
         <form id="rsvpForm"
